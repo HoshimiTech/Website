@@ -1,0 +1,36 @@
+.page-content h1 {
+  /*文字を適度に改行する*/
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.page-content table {
+  color: white;
+  width: 75%;
+  margin: 0px auto;
+  margin-bottom: 80px;
+  border: 1px white solid;
+  /*表の罫線を１本ずつだけ表示するため*/
+  border-collapse: collapse;
+}
+
+.page-content th,
+td {
+  border: 1px white solid;
+  padding: 10px;
+  /*文字を適度に改行する*/
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.page-content ul {
+  margin: 0px;
+}
+
+/*スマホ表示用*/
+@media screen and (max-width: 955px) {
+  .page-content table {
+    width: 90%;
+    margin-bottom: 80px;
+  }
+}

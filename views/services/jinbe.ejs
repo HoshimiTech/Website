@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/services.css" />
+	</head>
+
+	<body>
+		<%- include('../common_contents/navbar.ejs') %>
+
+		<div class="each-service">
+			<div class="botDescription">
+				<div class="botDescriptionCellLeft">
+					<img src="/image/jinbe.png" />
+				</div>
+				<div class="botDescriptionCellRight">
+					<h1>JINBE</h1>
+					<div class="btn">
+						<a href="#">BOTをサーバーに追加</a>
+						<a href="#" class="mobile">サポートサーバーに参加</a>
+					</div>
+					<div class="btn mobile">
+						<a href="#">サポートサーバーに参加</a>
+					</div>
+					<h4>JINBEと遊ぼう！！</h4>
+					<ul>
+						<li>じんべえのおみくじを引こう！！</li>
+						<li>じんべえとじゃんけんをしよう！</li>
+						<li>じんべえに誕生日を祝ってもらおう！</li>
+						<li>5000兆円欲しい！</li>
+						<li>その他、随時機能追加予定！！</li>
+					</ul>
+				</div>
+			</div>
+			<div class="commandDescription">
+				<h3>機能・コマンド</h3>
+				<table>
+					<tr>
+						<th>コマンド</th>
+						<th>コマンド内容</th>
+						<th>使い方</th>
+					</tr>
+					<tr>
+						<td>/omikuji</td>
+						<td>じんべえのおみくじを引こう！</td>
+						<td>/omikuji <非公開設定にするかどうか></td>
+					</tr>
+					<tr>
+						<td>/janken</td>
+						<td>じんべえとじゃんけんをしよう！</td>
+						<td>/janken <非公開設定にするかどうか></td>
+					</tr>
+					<tr>
+						<td>/birthday_register</td>
+						<td>誕生日を登録・更新しよう！</td>
+						<td>/birthday_register [誕生月] [誕生日]</td>
+					</tr>
+					<tr>
+						<td>/birthday_show</td>
+						<td>登録された誕生日を確認しよう！</td>
+						<td>
+							/birthday_show <確認する範囲を選択> [だれの情報を表示か設定]
+						</td>
+					</tr>
+					<tr>
+						<td>/happy_birthday</td>
+						<td>いつでもどこでも誰かの誕生日をお祝いできます！</td>
+						<td>/happy_birthday <祝う相手></td>
+					</tr>
+					<tr>
+						<td>/5000choyen</td>
+						<td>「5000兆円、欲しい！」の画像を作成できます！</td>
+						<td>/5000choyen</td>
+					</tr>
+					<tr>
+						<td>/help</td>
+						<td>BOTやコマンドに関するヘルプを表示します！</td>
+						<td>/help <詳細を知りたいコマンドタイプ></td>
+					</tr>
+					<tr>
+						<td>/ping</td>
+						<td>BOTにpingを実行します！</td>
+						<td>/ping</td>
+					</tr>
+					<tr>
+						<td>/server_setting birthday_celebrate</td>
+						<td>
+							誕生日を祝う機能を有効にするかどうか設定し、誕生日を祝うチャンネルも設定できます！
+						</td>
+						<td>
+							/server_setting birthday_celebrate [有効にするか無効にするか]
+							<誕生日を祝うチャンネル>
+						</td>
+					</tr>
+					<tr>
+						<td>/server_setting show</td>
+						<td>サーバー設定を確認できます！</td>
+						<td>/server_setting show</td>
+					</tr>
+				</table>
+
+				<div class="accordionMenu">
+					<details>
+						<summary>
+							<span class="summary"> /omikuji<span class="icon"></span> </span>
+						</summary>
+						<p>
+							じんべえのおみくじを引こう！<br />使い方：　/omikuji
+							<非公開設定にするかどうか>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /janken<span class="icon"></span> </span>
+						</summary>
+						<p>
+							じんべえとじゃんけんをしよう！<br />使い方：　/janken
+							<非公開設定にするかどうか>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/birthday_register<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							誕生日を登録・更新しよう！<br />使い方：　/birthday_register
+							[誕生月] [誕生日]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/birthday_show<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							登録された誕生日を確認しよう！<br />使い方：　/birthday_show
+							<確認する範囲を選択> [だれの情報を表示か設定]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/happy_birthday<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							いつでもどこでも誰かの誕生日をお祝いできます！<br />使い方：　/happy_birthday
+							<祝う相手>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/5000choyen<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							「5000兆円、欲しい！」の画像を作成できます！<br />使い方：　/5000choyen
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /help<span class="icon"></span> </span>
+						</summary>
+						<p>
+							BOTやコマンドに関するヘルプを表示します！<br />使い方：　/help
+							<詳細を知りたいコマンドタイプ>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /ping<span class="icon"></span> </span>
+						</summary>
+						<p>BOTにpingを実行します！<br />使い方：　/ping</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/server_setting birthday_celebrate<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							誕生日を祝う機能を有効にするかどうか設定し、誕生日を祝うチャンネルも設定できます！<br />使い方：　/server_setting
+							birthday_celebrate [有効にするか無効にするか]
+							<誕生日を祝うチャンネル>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/server_setting show<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							サーバー設定を確認できます！<br />使い方：　/server_setting show
+						</p>
+					</details>
+				</div>
+			</div>
+		</div>
+
+		<div class="goBack-to-serviceList">
+			<a href="/services">サービス一覧に戻る</a>
+		</div>
+
+		<%- include('../common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('../common_contents/menu_Script.ejs') %>
+</html>

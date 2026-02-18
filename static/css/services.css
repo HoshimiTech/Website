@@ -1,0 +1,320 @@
+.services {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.service {
+  margin: 15px;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  width: 30%;
+  height: 350px;
+}
+
+.service span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.service span img {
+  width: 95px;
+}
+
+.service span h2 {
+  word-wrap: break-word;
+  font-weight: bold;
+}
+
+.service span p {
+  margin: 0px;
+  font-size: small;
+}
+
+.service span .btn {
+  margin-top: 20px;
+}
+
+/*-----------各サービスページのCSS-----------*/
+/*サービス一覧に戻るボタンのCSS*/
+.goBack-to-serviceList {
+  position: absolute;
+  left: 15px;
+  top: 90px;
+}
+
+.goBack-to-serviceList a {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px 10px 40px;
+  background: #23272a;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.goBack-to-serviceList a:hover {
+  /* マウスオーバー時のスタイル */
+  background: #53575a;
+}
+
+.goBack-to-serviceList a::before {
+  /* 矢印の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(-135deg);
+  animation: slideBlink 1s linear infinite;
+  /* アニメーションの初期設定 */
+}
+
+@keyframes slideBlink {
+
+  /* アニメーションの内容 */
+  from {
+    /* アニメーション終了時のスタイル */
+    opacity: 1;
+    left: 25px;
+  }
+
+  to {
+    /* アニメーション開始時のスタイル */
+    opacity: 0;
+    left: 10px;
+  }
+}
+
+/*各サービスページのデザイン用CSS*/
+.each-service {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.botDescription {
+  margin: 0% auto;
+  display: table;
+}
+
+.botDescriptionCellLeft {
+  display: table-cell;
+  width: 400px;
+  vertical-align: middle;
+  padding: 20px;
+}
+
+.botDescriptionCellLeft img {
+  width: 100%;
+  vertical-align: middle;
+  border-radius: 10px;
+}
+
+.botDescriptionCellRight {
+  display: table-cell;
+  padding: 40px 20px;
+  vertical-align: middle;
+}
+
+.botDescriptionCellRight h1 {
+  font-size: 400%;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.botDescriptionCellRight ul {
+  color: white;
+}
+
+.botDescription .btn {
+  text-align: left;
+}
+
+.botDescription a.mobile {
+  display: inline;
+}
+
+.botDescription .mobile {
+  display: none;
+}
+
+.commandDescription {
+  width: 75%;
+  margin: 0px auto;
+  padding: 20px
+}
+
+.commandDescription h3 {
+  width: 200px;
+}
+
+.commandDescription table {
+  color: white;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.commandDescription table,
+th,
+td {
+  border: 2px white solid;
+}
+
+.commandDescription th,
+td {
+  padding: 7.5px;
+}
+
+.accordionMenu {
+  display: none;
+}
+
+/*教育版マイクラのページだけ特別CSS*/
+.mcedu-guide {
+  height: 60vh;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.mcedu-guide p {
+  color: #c0c0c0;
+}
+
+/*スマホ対応*/
+@media screen and (max-width: 955px) {
+  .service {
+    width: 75%;
+    height: 325px;
+  }
+
+  .goBack-to-serviceList {
+    top: 85px;
+  }
+
+  .botDescription,
+  .botDescriptionCellLeft,
+  .botDescriptionCellRight {
+    display: block;
+  }
+
+  .botDescriptionCellLeft {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .botDescriptionCellRight {
+    width: 80%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .botDescription .mobile {
+    display: block;
+  }
+
+  .botDescription .btn a,
+  .mobile a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .botDescription a.mobile {
+    display: none;
+  }
+
+  .commandDescription table {
+    display: none;
+  }
+
+  .accordionMenu {
+    display: block;
+  }
+
+  .accordionMenu summary {
+    /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
+    display: block;
+  }
+
+  .accordionMenu summary::-webkit-details-marker {
+    /* Safariで表示されるデフォルトの三角形アイコンを消します */
+    display: none;
+  }
+
+  .accordionMenu .summary {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5px 0px;
+    padding: 16px 24px;
+    border: 1px solid #6070cc;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+  }
+
+  details[open] .summary {
+    border-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .summary .icon {
+    display: block;
+    position: relative;
+    width: 24px;
+    margin-left: 6px;
+    flex-shrink: 0;
+    transform-origin: center 43%;
+    transition: transform 0.4s;
+  }
+
+  /* アコーディオンが開いた時のスタイル */
+  details[open] .summary .icon {
+    transform: rotate(180deg);
+  }
+
+  /* アイコンのバーのスタイル */
+  .summary .icon::before,
+  .summary .icon::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 3px;
+    background-color: white;
+  }
+
+  .summary .icon::before {
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  .summary .icon::after {
+    right: 0;
+    transform: rotate(-45deg);
+  }
+
+  .accordionMenu p {
+    background-color: #30409c;
+    margin-top: 0px;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}

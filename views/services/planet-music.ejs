@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/services.css" />
+	</head>
+
+	<body>
+		<%- include('../common_contents/navbar.ejs') %>
+
+		<div class="each-service">
+			<div class="botDescription">
+				<div class="botDescriptionCellLeft">
+					<img src="/image/planet-music.jpg" />
+				</div>
+				<div class="botDescriptionCellRight">
+					<h1>Planet music</h1>
+					<div class="btn">
+						<a href="#">BOTをサーバーに追加</a>
+						<a href="#" class="mobile">サポートサーバーに参加</a>
+					</div>
+					<div class="btn mobile">
+						<a href="#">サポートサーバーに参加</a>
+					</div>
+					<h4>高性能な完全日本語対応の音楽botをあなたに！</h4>
+					<ul>
+						<li>デフォルト音量は耳を破壊しない小さめ設定！</li>
+						<li>デフォルトのプレイリスト・音量の設定が可能！</li>
+						<li>その他、随時機能追加予定！！</li>
+					</ul>
+				</div>
+			</div>
+			<div class="commandDescription">
+				<h3>機能・コマンド</h3>
+				<table>
+					<tr>
+						<th>コマンド</th>
+						<th>コマンド内容</th>
+						<th>使い方</th>
+					</tr>
+					<tr>
+						<td>/back</td>
+						<td>前の楽曲を再度再生します。</td>
+						<td>/back</td>
+					</tr>
+					<tr>
+						<td>/bot-info</td>
+						<td>BOTの情報を表示します。</td>
+						<td>/bot-info</td>
+					</tr>
+					<tr>
+						<td>/clear</td>
+						<td>キューの中身を全て削除します。</td>
+						<td>/clear</td>
+					</tr>
+					<tr>
+						<td>/filter</td>
+						<td>再生中の楽曲にエフェクトを追加・削除します。</td>
+						<td>/filter</td>
+					</tr>
+					<tr>
+						<td>/for_bot_admin</td>
+						<td>BOTのオーナーのみが使用できるコマンドです。</td>
+						<td>一般ユーザーは使用できません</td>
+					</tr>
+					<tr>
+						<td>/help</td>
+						<td>BOTやコマンドに関するヘルプを表示します。</td>
+						<td>/help &lt;詳しく知りたいコマンド&gt;</td>
+					</tr>
+					<tr>
+						<td>/loop</td>
+						<td>ループ再生の設定をします。</td>
+						<td>
+							/loop
+							[キューをループするか現在再生中の楽曲をループするかループをやめるか]
+						</td>
+					</tr>
+					<tr>
+						<td>/lyrics</td>
+						<td>
+							楽曲の歌詞を表示します。キーワードを指定しない場合は現在の楽曲の歌詞を検索します。
+						</td>
+						<td>/lyrics &lt;検索キーワード&gt;</td>
+					</tr>
+					<tr>
+						<td>/nowplaying</td>
+						<td>現在再生中の楽曲の情報を表示します。</td>
+						<td>/nowplaying</td>
+					</tr>
+					<tr>
+						<td>/pause</td>
+						<td>楽曲の再生を一時停止・再開します。</td>
+						<td>/pause</td>
+					</tr>
+					<tr>
+						<td>/ping</td>
+						<td>BOTのPingを測定します。</td>
+						<td>/ping</td>
+					</tr>
+					<tr>
+						<td>/play</td>
+						<td>
+							楽曲を再生します。再生する楽曲を指定しない場合、デフォルトのプレイリストが再生されます。
+						</td>
+						<td>
+							/play [楽曲URLまたは楽曲名] [楽曲ファイル(mp3)] [Radikoの放送局]
+						</td>
+					</tr>
+					<tr>
+						<td>再生する</td>
+						<td>
+							メッセージを右クリックすると、そのメッセージの中に含まれるURLから楽曲を再生します
+						</td>
+						<td>メッセージを右クリックして、出てきたメニューから実行</td>
+					</tr>
+					<tr>
+						<td>/queue</td>
+						<td>キューの中身を表示します。</td>
+						<td>/queue</td>
+					</tr>
+					<tr>
+						<td>/search</td>
+						<td>楽曲を検索します。</td>
+						<td>
+							/search &lt;検索キーワード&gt;
+							&lt;検索対象：動画／プレイリスト&gt;
+						</td>
+					</tr>
+					<tr>
+						<td>/seek</td>
+						<td>再生中の楽曲の再生位置を変更します。</td>
+						<td>/seek &lt;再生位置(例：2:30)&gt;</td>
+					</tr>
+					<tr>
+						<td>/settings default_volume</td>
+						<td>サーバーでの既定の音量の設定をします。</td>
+						<td>/settings default_volume &lt;音量(範囲：0~50)&gt;</td>
+					</tr>
+					<tr>
+						<td>/settings default_playlist</td>
+						<td>このサーバーでのデフォルトのプレイリストを設定します。</td>
+						<td>/settings default_playlist &lt;プレイリストURL&gt;</td>
+					</tr>
+					<tr>
+						<td>/settings remove_nowplaying</td>
+						<td>
+							現在再生中の楽曲表示を曲が変わるたびに削除するかどうかを選択できます。
+						</td>
+						<td>/settings remove_nowplaying &lt;削除する／削除しない&gt;</td>
+					</tr>
+					<tr>
+						<td>/settings silent_nowplaying</td>
+						<td>
+							現在再生中の楽曲表示をサイレントメッセージで送信するかどうかを選択できます。
+						</td>
+						<td>
+							/settings silent_nowplaying &lt;silentにする／silentにしない&gt;
+						</td>
+					</tr>
+					<tr>
+						<td>/settings simple_nowplaying</td>
+						<td>現在再生中の楽曲表示をシンプルにします。</td>
+						<td>
+							/settings simple_nowplaying
+							&lt;シンプルにする／シンプルにしない&gt;
+						</td>
+					</tr>
+					<tr>
+						<td>/settings show</td>
+						<td>設定を閲覧します。</td>
+						<td>/settings show</td>
+					</tr>
+					<tr>
+						<td>/settings reset</td>
+						<td>設定をリセットします。</td>
+						<td>/settings reset</td>
+					</tr>
+					<tr>
+						<td>/shuffle</td>
+						<td>キューの中身をシャッフルします。</td>
+						<td>/shuffle</td>
+					</tr>
+					<tr>
+						<td>/skip</td>
+						<td>楽曲をスキップします。</td>
+						<td>/skip [スキップする曲数]</td>
+					</tr>
+					<tr>
+						<td>/stop</td>
+						<td>再生を停止して切断します。</td>
+						<td>/stop</td>
+					</tr>
+					<tr>
+						<td>/volume</td>
+						<td>音量を変更します。</td>
+						<td>/volume &lt;音量(範囲：0~50)&gt;</td>
+					</tr>
+				</table>
+
+				<div class="accordionMenu">
+					<details>
+						<summary>
+							<span class="summary">
+								/back
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>前の楽曲を再度再生します。<br />使い方：　/back</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/bot-info
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>BOTの情報を表示します。<br />使い方：　/bot-info</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/clear
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>キューの中身を全て削除します。<br />使い方：　/clear</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/filter
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							再生中の楽曲にエフェクトを追加・削除します。<br />使い方：　/filter
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/for_bot_admin
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							BOTのオーナーのみが使用できるコマンドです。<br />使い方：　一般ユーザーは使用できません
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/help
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							BOTやコマンドに関するヘルプを表示します。<br />使い方：　/help
+							&lt;詳しく知りたいコマンド&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/loop
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							ループ再生の設定をします。<br />使い方：　/loop
+							[キューをループするか現在再生中の楽曲をループするかループをやめるか]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/lyrics
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							楽曲の歌詞を表示します。キーワードを指定しない場合は現在の楽曲の歌詞を検索します。<br />使い方：　/lyrics
+							&lt;検索キーワード&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/nowplaying
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							現在再生中の楽曲の情報を表示します。<br />使い方：　/nowplaying
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/pause
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>楽曲の再生を一時停止・再開します。<br />使い方：　/pause</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/ping
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>BOTのPingを測定します。<br />使い方：　/ping</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/play
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							楽曲を再生します。再生する楽曲を指定しない場合、デフォルトのプレイリストが再生されます。<br />使い方：　/play
+							[楽曲URLまたは楽曲名] [楽曲ファイル(mp3)] [Radikoの放送局]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								再生する
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							メッセージを右クリックすると、そのメッセージの中に含まれるURLから楽曲を再生します<br />使い方：　メッセージを右クリックして、出てきたメニューから実行
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/queue
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>キューの中身を表示します。<br />使い方：　/queue</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/search
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							楽曲を検索します。<br />使い方：　/search &lt;検索キーワード&gt;
+							&lt;検索対象：動画／プレイリスト&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/seek
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							再生中の楽曲の再生位置を変更します。<br />使い方：　/seek
+							&lt;再生位置(例：2:30)&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings default_volume
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							サーバーでの既定の音量の設定をします。<br />使い方：　/settings
+							default_volume &lt;音量(範囲：0~50)&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings default_playlist
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							このサーバーでのデフォルトのプレイリストを設定します。<br />使い方：　/settings
+							default_playlist &lt;プレイリストURL&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings remove_nowplaying
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							現在再生中の楽曲表示を曲が変わるたびに削除するかどうかを選択できます。<br />使い方：　/settings
+							remove_nowplaying &lt;削除する／削除しない&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings silent_nowplaying
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							現在再生中の楽曲表示をサイレントメッセージで送信するかどうかを選択できます。<br />使い方：　/settings
+							silent_nowplaying &lt;silentにする／silentにしない&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings simple_nowplaying
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							現在再生中の楽曲表示をシンプルにします。<br />使い方：　/settings
+							simple_nowplaying &lt;シンプルにする／シンプルにしない&gt;
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings show
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>設定を閲覧します。<br />使い方：　/settings show</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/settings reset
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>設定をリセットします。<br />使い方：　/settings reset</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/shuffle
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>キューの中身をシャッフルします。<br />使い方：　/shuffle</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/skip
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							楽曲をスキップします。<br />使い方：　/skip [スキップする曲数]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/stop
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>再生を停止して切断します。<br />使い方：　/stop</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/volume
+								<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							音量を変更します。<br />使い方：　/volume &lt;音量(範囲：0~50)&gt;
+						</p>
+					</details>
+				</div>
+				<!--↑もコマンド一覧にどんどん追加-->
+			</div>
+		</div>
+
+		<div class="goBack-to-serviceList">
+			<a href="/services">サービス一覧に戻る</a>
+		</div>
+
+		<%- include('../common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('../common_contents/menu_Script.ejs') %>
+</html>

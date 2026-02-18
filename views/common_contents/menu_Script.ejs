@@ -1,0 +1,18 @@
+<script>
+	document.addEventListener("click", (e) => {
+		if (!e.target.closest(".navbar")) {
+			const checkbox = document.querySelector("#menu-checkbox");
+			checkbox.checked = false;
+		}
+	});
+
+	let menuCheckBox = document.getElementById("menu-checkbox");
+	let menu = document.querySelector(".menu");
+	menuCheckBox.addEventListener("change", () => {
+		if (!menuCheckBox.checked) {
+			menu.style.left = "-100%";
+		} else {
+			menu.style.left = 0;
+		}
+	});
+</script>

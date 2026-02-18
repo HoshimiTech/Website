@@ -1,0 +1,338 @@
+@import url("./font.css");
+
+/*その他とPC等用*/
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  background: #2c2f33;
+  margin: 0 0;
+  padding: 0 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content h1 {
+  font-weight: bold;
+  font-size: 300%;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+/* メインコンテンツエリアを拡張してフッターを下部に固定 */
+.page-content,
+main,
+.main-content {
+  flex: 1;
+}
+
+/* 一般的なコンテナに対する対応 */
+body>*:not(.footer):not(.navbar) {
+  flex: 1 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+p,
+a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.no_list_icon {
+  list-style: none;
+  padding: 0px;
+}
+
+.navbar {
+  background: #23272a;
+  padding: 20px 35px;
+}
+
+.navbar a {
+  transition: 0.25s ease;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  color: #7792f3;
+}
+
+.navbar a:not(:last-child) {
+  margin-right: 12px;
+}
+
+.navbar .nav_table {
+  display: table;
+}
+
+.navbar a.logo {
+  display: table-cell;
+  padding: 0;
+  width: 325px;
+}
+
+.navbar a.logo div {
+  display: table;
+}
+
+.navbar a.logo img {
+  margin-right: 10px;
+  display: table-cell;
+  width: 38px;
+}
+
+.navbar a.logo h1 {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 175%;
+  margin: 0px 10px 0px;
+}
+
+.navbar .nav_table a.menu-button_short {
+  display: table-cell;
+  padding: 0;
+  width: 79px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.navbar .nav_table a.menu-button_long {
+  display: table-cell;
+  padding: 0;
+  width: 130px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.menu {
+  display: none;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn a {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: #23272a;
+  font-size: large;
+  text-decoration: none;
+}
+
+a.button_arrow {
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px 10px 50px;
+  background: #23272a;
+  color: #fff;
+  border-radius: 10px;
+}
+
+a.button_arrow:hover {
+  /* マウスオーバー時のスタイル */
+  background: #53575a;
+}
+
+a.button_arrow::before {
+  /* 矢印の表示設定 */
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  animation: slideBlink 1s linear infinite;
+  /* アニメーションの初期設定 */
+}
+
+@keyframes slideBlink {
+
+  /* アニメーションの内容 */
+  from {
+    /* アニメーション開始時のスタイル */
+    opacity: 0;
+    left: 5px;
+  }
+
+  to {
+    /* アニメーション終了時のスタイル */
+    opacity: 1;
+    left: 20px;
+  }
+}
+
+.footer {
+  background-color: #23272a;
+  color: white;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.footer div {
+  display: inline-block;
+  padding: 0px 25px;
+  margin: 20px 0px;
+}
+
+.footer div h2 {
+  font-weight: bold;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.footer div img {
+  height: 25px;
+  margin: 0px 5px;
+}
+
+.footer div ul {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer div li {
+  display: inline-block;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+
+/*スマホ表示用*/
+input[type='checkbox'] {
+  display: none;
+}
+
+@media screen and (max-width: 955px) {
+  .navbar {
+    background: #23272a;
+    padding: 15px 15px;
+  }
+
+  .navbar .nav_table a.menu-button_short {
+    display: none;
+  }
+
+  .navbar .nav_table a.menu-button_long {
+    display: none;
+  }
+
+  /*------ハンバーガーメニューの見た目用------*/
+  .menu_btn {
+    display: table-cell;
+    position: relative;
+    width: 26px;
+    /*ボタン全体の幅を変えたいならここを調整*/
+    height: 100%;
+    /*ボタン全体の高さを変えたいならここを調整*/
+    cursor: pointer;
+  }
+
+  .menu_btn span {
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    /*ボタン内の三本線の太さを変えたいならここを調整*/
+    background-color: white;
+    /*ボタン内の三本線の色を変えたいならここを調整*/
+    transition: 0.4s;
+    /*アニメーション時間*/
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+  }
+
+  /*ボタン全体の高さか線の太さを調整したらここも調整しないときれいに表示されませぬ*/
+  .menu_btn span:nth-of-type(1) {
+    top: -30px;
+  }
+
+  .menu_btn span:nth-of-type(2) {
+    top: -20px;
+  }
+
+  .menu_btn span:nth-of-type(3) {
+    top: -10px;
+  }
+
+  #menu-checkbox:checked~#menu_label .menu_btn span:nth-of-type(1) {
+    transform: translateY(10px) rotate(-45deg);
+  }
+
+  #menu-checkbox:checked~#menu_label .menu_btn span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  #menu-checkbox:checked~#menu_label .menu_btn span:nth-of-type(3) {
+    transform: translateY(-10px) rotate(45deg);
+  }
+
+  #menu_label {
+    display: table-cell;
+    width: 45px;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    background: #3e4847;
+    color: #fff;
+    padding: 20px;
+    top: 69px;
+    left: -100%;
+    transition: left 0.7s;
+    z-index: 10000;
+  }
+
+  .menu::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .menu::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .menu::-webkit-scrollbar-thumb {
+    background-color: #17585d;
+  }
+
+  .menu>li {
+    border-bottom: 1px solid #fff;
+    padding: 10px 0;
+  }
+
+  .menu_style {
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

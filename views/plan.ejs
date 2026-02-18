@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/plan.css" />
+	</head>
+
+	<body>
+		<%- include('common_contents/navbar.ejs') %>
+
+		<div class="page-content">
+			<h1>プラン</h1>
+			<div class="planList">
+				<div class="plan">
+					<span>
+						<div class="price">
+							<h3>無料プラン</h3>
+							<p>¥0<br />　</p>
+						</div>
+						<div class="possibleThing">
+							<ul class="no_list_icon">
+								<li>planet botの全機能</li>
+								<li>JINBEの全機能</li>
+								<li class="lastOption">
+									教育版Minecraft非公式ポータルの<br />全コンテンツへのアクセス
+								</li>
+							</ul>
+						</div>
+					</span>
+				</div>
+				<div class="plan">
+					<span>
+						<div class="price">
+							<h3>基本プラン(月額)</h3>
+							<p>¥250<br />　</p>
+						</div>
+						<div class="possibleThing">
+							<ul class="no_list_icon">
+								<li>planet botの全機能</li>
+								<li>JINBEの全機能</li>
+								<li>
+									教育版Minecraft非公式ポータルの<br />全コンテンツへのアクセス
+								</li>
+								<li class="lastOption">Planet musicの全機能</li>
+							</ul>
+						</div>
+						<div class="btn buyButton">
+							<a
+								href="/stripe/checkout?plan=monthly"
+								style="background-color: #5865f2"
+								>購入する</a
+							>
+						</div>
+					</span>
+				</div>
+				<div class="plan">
+					<span>
+						<div class="price">
+							<h3>基本プラン(年額)</h3>
+							<p>¥2,750<br />(月換算約¥230)</p>
+						</div>
+						<div class="possibleThing">
+							<ul class="no_list_icon">
+								<li>planet botの全機能</li>
+								<li>JINBEの全機能</li>
+								<li>
+									教育版Minecraft非公式ポータルの<br />全コンテンツへのアクセス
+								</li>
+								<li class="lastOption">Planet musicの全機能</li>
+							</ul>
+						</div>
+						<div class="btn buyButton">
+							<a
+								href="/stripe/checkout?plan=yearly"
+								style="background-color: #57f287; color: black"
+								>購入する</a
+							>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<%- include('common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('common_contents/menu_Script.ejs') %>
+</html>

@@ -1,0 +1,74 @@
+.planList {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.plan {
+  margin: 15px;
+  padding: 20px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  width: 290px;
+  height: 415px;
+}
+
+.plan span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.plan .price p {
+  font-size: large;
+  font-weight: bold;
+  margin: 20px 0px;
+}
+
+.plan .price h3 {
+  margin: 0px;
+}
+
+.plan .possibleThing {
+  color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.plan .possibleThing ul {
+  padding: 15px;
+  margin: 0px;
+}
+
+.plan .possibleThing li {
+  padding: 10px 0px;
+  border-bottom: 0.5px solid gray;
+}
+
+.plan .possibleThing li.lastOption {
+  border-bottom: none;
+}
+
+.buyButton {
+  margin: 20px 0px;
+}
+
+.buyButton a {
+  font-size: unset;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1091px) {
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+  }
+
+  .page-content {
+    margin-bottom: 118px;
+  }
+}

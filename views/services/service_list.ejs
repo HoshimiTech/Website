@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/services.css" />
+	</head>
+
+	<body>
+		<%- include('../common_contents/navbar.ejs') %>
+
+		<div class="page-content">
+			<h1>サービス一覧</h1>
+			<div class="services">
+				<div class="service">
+					<span>
+						<img src="/image/logo.png" />
+						<h2>Planet BOT</h2>
+						<p>教育現場で役に立つBOT</p>
+						<div class="btn">
+							<a href="/services/planet-bot">詳細</a>
+						</div>
+					</span>
+				</div>
+				<div class="service">
+					<span>
+						<img src="/image/jinbe.png" />
+						<h2>JINBE</h2>
+						<p>おみくじなどの、遊ぶためのBOT</p>
+						<div class="btn">
+							<a href="/services/jinbe">詳細</a>
+						</div>
+					</span>
+				</div>
+				<div class="service">
+					<span>
+						<img src="/image/planet-music.jpg" />
+						<h2>Planet music</h2>
+						<p>[開発中]Discordで音楽が聞けるdiscord BOT</p>
+						<div class="btn">
+							<a href="/services/planet-music">詳細</a>
+						</div>
+					</span>
+				</div>
+				<div class="service">
+					<span>
+						<img src="/image/mcedu-portal.png" />
+						<h2>教育版Minecraft非公式ポータル</h2>
+						<p>教育版マインクラフトの情報を発信するwebサイト！</p>
+						<div class="btn">
+							<a href="/services/mcedu-portal">詳細</a>
+						</div>
+					</span>
+				</div>
+				<div class="service">
+					<span>
+						<img src="/image/no-image.png" />
+						<h2>準備中...</h2>
+						<p>準備中...</p>
+						<div class="btn" style="cursor: not-allowed; padding: 10px 0px">
+							<a href=" /services" style="pointer-events: none">詳細</a>
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<%- include('../common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('../common_contents/menu_Script.ejs') %>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/faq.css" />
+	</head>
+
+	<body>
+		<%- include('common_contents/navbar.ejs') %>
+
+		<div class="page-content">
+			<h1>よくあるご質問</h1>
+			<div class="accordionMenu">
+				<details>
+					<summary>
+						<span class="summary">
+							Q.
+							サブスクリプションを契約しましたが、サブスクリプション対象のBOTが利用できません<span
+								class="icon"
+							></span>
+						</span>
+					</summary>
+					<p>
+						A.
+						サブスクリプションは各サーバーごとに適応されます。サーバーにサブスクリプションが適応されているかご確認ください。<br />　それでも利用できない場合は<a
+							href="#"
+							><b>サポートサーバー</b></a
+						>にてお問い合わせください。
+					</p>
+				</details>
+				<details>
+					<summary>
+						<span class="summary">
+							Q. サブスクリプションを解約したいです<span class="icon"></span>
+						</span>
+					</summary>
+					<p>
+						A.
+						解約の方法に関するご案内は、開発が完了し次第こちらに記述します。それまでは手動で対応いたしますので、<a
+							href="#"
+							><b>サポートサーバー</b></a
+						>にてご質問ください。
+					</p>
+				</details>
+				<details>
+					<summary>
+						<span class="summary">
+							Q. 利用可能な決済方法は何ですか<span class="icon"></span>
+						</span>
+					</summary>
+					<p>
+						A.
+						利用可能な決済方法に関するご案内は、開発が完了し次第こちらに記述します。
+					</p>
+				</details>
+			</div>
+		</div>
+
+		<%- include('common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('common_contents/menu_Script.ejs') %>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title><%- pageTitle %></title>
+		<link rel="icon" href="/image/favicon.ico" />
+		<link rel="apple-touch-icon" href="/image/logo.png" />
+
+		<link rel="stylesheet" type="text/css" href="/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="/css/services.css" />
+	</head>
+
+	<body>
+		<%- include('../common_contents/navbar.ejs') %>
+
+		<div class="each-service">
+			<div class="botDescription">
+				<div class="botDescriptionCellLeft">
+					<img src="/image/logo.png" />
+				</div>
+				<div class="botDescriptionCellRight">
+					<h1>Planet BOT</h1>
+					<div class="btn">
+						<a href="#">BOTをサーバーに追加</a>
+						<a href="#" class="mobile">サポートサーバーに参加</a>
+					</div>
+					<div class="btn mobile">
+						<a href="#">サポートサーバーに参加</a>
+					</div>
+					<h4>教育機関にDiscordを！！</h4>
+					<ul>
+						<li>全員の学年ロールを１年上にずらす機能！</li>
+						<li>メッセージを一番下に固定するsticky機能！</li>
+						<li>重要な情報などを別チャンネルにメモできるstarboard機能！</li>
+						<li>勉強タイマーである、ポモドーロタイマー機能！</li>
+						<li>その他、随時機能追加予定！！</li>
+					</ul>
+				</div>
+			</div>
+			<div class="commandDescription">
+				<h3>機能・コマンド</h3>
+				<table>
+					<tr>
+						<th>コマンド</th>
+						<th>コマンド内容</th>
+						<th>使い方</th>
+					</tr>
+					<tr>
+						<td>/qr_code</td>
+						<td>文字列やURLをQRコードに変換します！</td>
+						<td>/qr_code [URLや文字列]</td>
+					</tr>
+					<tr>
+						<td>/help</td>
+						<td>BOTやコマンドに関するヘルプを表示します！</td>
+						<td>/help <詳細を知りたいコマンド名></td>
+					</tr>
+					<tr>
+						<td>/ytsearch</td>
+						<td>YouTubeの動画・プレイリストを検索します。</td>
+						<td>/yt_search [検索キーワード]</td>
+					</tr>
+					<tr>
+						<td>/ping</td>
+						<td>BOTにpingを実行します！</td>
+						<td>/ping</td>
+					</tr>
+					<tr>
+						<td>/grade_role_update</td>
+						<td>サーバーに設定された学年ロールを新学期の物に更新します。</td>
+						<td>/grade_role_update</td>
+					</tr>
+				</table>
+
+				<div class="accordionMenu">
+					<details>
+						<summary>
+							<span class="summary"> /qr_code<span class="icon"></span> </span>
+						</summary>
+						<p>
+							文字列やURLをQRコードに変換します！<br />使い方：　/qr_code
+							[URLや文字列]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /help<span class="icon"></span> </span>
+						</summary>
+						<p>
+							BOTやコマンドに関するヘルプを表示します！<br />使い方：　/help
+							<詳細を知りたいコマンド名>
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /ytsearch<span class="icon"></span> </span>
+						</summary>
+						<p>
+							YouTubeの動画・プレイリストを検索します。<br />使い方：　/yt_search
+							[検索キーワード]
+						</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary"> /ping<span class="icon"></span> </span>
+						</summary>
+						<p>BOTにpingを実行します！<br />使い方：　/ping</p>
+					</details>
+					<details>
+						<summary>
+							<span class="summary">
+								/grade_role_update<span class="icon"></span>
+							</span>
+						</summary>
+						<p>
+							サーバーに設定された学年ロールを新学期の物に更新します。<br />使い方：　/grade_role_update
+						</p>
+					</details>
+				</div>
+				<!--↑もコマンド一覧にどんどん追加-->
+			</div>
+		</div>
+
+		<div class="goBack-to-serviceList">
+			<a href="/services">サービス一覧に戻る</a>
+		</div>
+
+		<%- include('../common_contents/footer.ejs') %>
+	</body>
+
+	<%- include('../common_contents/menu_Script.ejs') %>
+</html>

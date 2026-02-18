@@ -1,0 +1,58 @@
+.page-content h1 {
+  margin-bottom: -10px;
+}
+
+.home-contents {
+  position: relative;
+}
+
+.home-contents img {
+  width: 100%;
+}
+
+.home-contents .home-Strings {
+  position: absolute;
+  color: white;
+  top: 25%;
+  left: 50%;
+  width: 75%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+
+.home-contents .home-Strings h1 {
+  font-weight: bold;
+  font-size: 500%;
+}
+
+.home-Strings p {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.home-Strings p.mobile {
+  display: none;
+}
+
+/*for-mobile*/
+@media screen and (max-width: 955px) {
+  .home-contents .home-Strings {
+    top: 30%;
+  }
+
+  .home-contents .home-Strings h1 {
+    font-size: 200%;
+    margin-top: 75px;
+  }
+
+  .home-Strings p.pc {
+    display: none;
+  }
+
+  .home-Strings p.mobile {
+    display: block;
+  }
+}
