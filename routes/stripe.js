@@ -24,6 +24,12 @@ router.get('/checkout', async (req, res, next) => {
       });
     }
 
+    if (!price) {
+      return res.status(500).render('error/500 serverError', {
+        pageTitle: '500 INTERNAL SERVER ERROR｜Planet Bot Project',
+      });
+    }
+
     const session = await stripe.checkout.sessions.create({
       billing_address_collection: 'auto',
       line_items: [
@@ -54,22 +60,30 @@ router.post(
     let event;
 
     // Content-Typeの追加チェック
-    if (req.headers['content-type'] !== 'application/json') {
+    const contentType = req.headers['content-type'] || '';
+    if (!contentType.startsWith('application/json')) {
       return res.status(400).send('Invalid content type');
     }
 
-    if (stripeEndpointSecret) {
-      const signature = req.headers['stripe-signature'];
-      try {
-        event = stripe.webhooks.constructEvent(
-          req.body,
-          signature,
-          stripeEndpointSecret,
-        );
-      } catch (err) {
-        console.log(`⚠️  Webhook signature verification failed.`, err.message);
-        return res.status(400).send(`Webhook Error: ${err.message}`);
-      }
+    if (!stripeEndpointSecret) {
+      console.error('stripeEndpointSecret is not configured.');
+      return res.status(500).send('Webhook endpoint is not configured.');
+    }
+
+    const signature = req.headers['stripe-signature'];
+    if (!signature) {
+      return res.status(400).send('Missing Stripe signature');
+    }
+
+    try {
+      event = stripe.webhooks.constructEvent(
+        req.body,
+        signature,
+        stripeEndpointSecret,
+      );
+    } catch (err) {
+      console.log(`Webhook signature verification failed.`, err.message);
+      return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
     let subscription;
