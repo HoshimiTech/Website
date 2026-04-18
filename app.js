@@ -16,7 +16,7 @@ require('./router')(app);
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).render('error/500 serverError', {
-		pageTitle: '500 INTERNAL SERVER ERROR｜Planet Bot Project',
+		pageTitle: '500 INTERNAL SERVER ERROR｜HoshimiTech',
 	});
 });
 
