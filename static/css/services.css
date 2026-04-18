@@ -244,77 +244,7 @@ td {
     display: block;
   }
 
-  .accordionMenu summary {
-    /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
-    display: block;
-  }
-
-  .accordionMenu summary::-webkit-details-marker {
-    /* Safariで表示されるデフォルトの三角形アイコンを消します */
-    display: none;
-  }
-
-  .accordionMenu .summary {
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2.5px 0px;
-    padding: 16px 24px;
-    border: 1px solid #6070cc;
-    border-radius: 10px;
-    font-weight: bold;
-    color: white;
-  }
-
-  details[open] .summary {
-    border-radius: 0px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-
-  .summary .icon {
-    display: block;
-    position: relative;
-    width: 24px;
-    margin-left: 6px;
-    flex-shrink: 0;
-    transform-origin: center 43%;
-    transition: transform 0.4s;
-  }
-
-  /* アコーディオンが開いた時のスタイル */
-  details[open] .summary .icon {
-    transform: rotate(180deg);
-  }
-
-  /* アイコンのバーのスタイル */
-  .summary .icon::before,
-  .summary .icon::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 15px;
-    height: 3px;
-    background-color: white;
-  }
-
-  .summary .icon::before {
-    left: 0;
-    transform: rotate(45deg);
-  }
-
-  .summary .icon::after {
-    right: 0;
-    transform: rotate(-45deg);
-  }
-
   .accordionMenu p {
-    background-color: #30409c;
-    margin-top: 0px;
     padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
   }
 }

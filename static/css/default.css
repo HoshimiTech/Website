@@ -23,9 +23,7 @@ body {
 }
 
 /* メインコンテンツエリアを拡張してフッターを下部に固定 */
-.page-content,
-main,
-.main-content {
+.page-content {
   flex: 1;
 }
 
@@ -135,6 +133,77 @@ a {
   background-color: #23272a;
   font-size: large;
   text-decoration: none;
+}
+
+/* 汎用アコーディオン */
+.accordionMenu summary {
+  display: block;
+}
+
+.accordionMenu summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordionMenu .summary {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5px 0px;
+  padding: 16px 24px;
+  border: 1px solid #6070cc;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.accordionMenu details[open] .summary {
+  border-radius: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.accordionMenu .summary .icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  margin-left: 6px;
+  flex-shrink: 0;
+  transform-origin: center 43%;
+  transition: transform 0.4s;
+}
+
+.accordionMenu details[open] .summary .icon {
+  transform: rotate(180deg);
+}
+
+.accordionMenu .summary .icon::before,
+.accordionMenu .summary .icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 3px;
+  background-color: white;
+}
+
+.accordionMenu .summary .icon::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.accordionMenu .summary .icon::after {
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+.accordionMenu p {
+  background-color: #30409c;
+  margin-top: 0px;
+  padding: 16px 24px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 a.button_arrow {
