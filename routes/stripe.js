@@ -5,7 +5,8 @@ const stripeToken = process.env.stripeToken;
 const stripeEndpointSecret = process.env.stripeEndpointSecret;
 const redirect_uri = `${process.env.redirectUri}:${process.env.port}`;
 
-const stripe = require('stripe')(stripeToken);
+const Stripe = require('stripe');
+const stripe = new Stripe(stripeToken);
 const express = require('express');
 
 router.get('/checkout', async (req, res, next) => {
