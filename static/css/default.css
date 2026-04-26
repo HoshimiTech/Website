@@ -3,9 +3,9 @@
 /*デフォルトではライトテーマで定義*/
 :root {
   --page-background: #f4f7fc;
-  --page-headerFooter-background: #ffffff;
+  --page-headerFooter-background: white;
   --menu-background: #edf3fb;
-  --border-color: rgba(31, 41, 55, 0.18);
+  --border-color: black;
   --button-background: #e9f0fb;
   --button-hover: #d8e4fa;
   --text-color: #1f2937;
@@ -13,13 +13,13 @@
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
   --theme-switcher-inactive: #607087;
-  --theme-switcher-active-text: #ffffff;
+  --theme-switcher-active-text: white;
   --theme-switcher-active-background: #4e6fe0;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
   --accordion-content-background: #dae6ff;
   --accordion-border-color: #7b8de6;
-  --card-background: #ffffff;
+  --card-background: white;
   --card-border: rgba(31, 41, 55, 0.12);
   --contact-icon-color-changer: 100%;
   color-scheme: light;
@@ -31,7 +31,7 @@
     --page-background: #2c2f33;
     --page-headerFooter-background: #23272a;
     --menu-background: #3e4847;
-    --border-color: rgba(0, 0, 0, 0.75);
+    --border-color: white;
     --button-background: #30363b;
     --button-hover: #53575a;
     --text-color: white;
@@ -55,9 +55,9 @@
 /*テーマの定義（ユーザーがサイト内でライトテーマを選択した場合）*/
 html[data-theme="light"] {
   --page-background: #f4f7fc;
-  --page-headerFooter-background: #ffffff;
+  --page-headerFooter-background: white;
   --menu-background: #edf3fb;
-  --border-color: rgba(31, 41, 55, 0.18);
+  --border-color: black;
   --button-background: #e9f0fb;
   --button-hover: #d8e4fa;
   --text-color: #1f2937;
@@ -65,13 +65,13 @@ html[data-theme="light"] {
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
   --theme-switcher-inactive: #607087;
-  --theme-switcher-active-text: #ffffff;
+  --theme-switcher-active-text: white;
   --theme-switcher-active-background: #4e6fe0;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
   --accordion-content-background: #dae6ff;
   --accordion-border-color: #7b8de6;
-  --card-background: #ffffff;
+  --card-background: white;
   --card-border: rgba(31, 41, 55, 0.12);
   --contact-icon-color-changer: 100%;
   color-scheme: light;
@@ -82,7 +82,7 @@ html[data-theme="dark"] {
   --page-background: #2c2f33;
   --page-headerFooter-background: #23272a;
   --menu-background: #3e4847;
-  --border-color: rgba(255, 255, 255, 0.35);
+  --border-color: white;
   --button-background: #30363b;
   --button-hover: #53575a;
   --text-color: white;

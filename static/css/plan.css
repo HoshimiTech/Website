@@ -12,7 +12,7 @@
   background-color: var(--card-background);
   color: var(--text-color);
   width: 290px;
-  height: 415px;
+  height: 420px;
   border: 1px solid var(--card-border);
   border-radius: 10px;
 }
@@ -41,12 +41,12 @@
 }
 
 .plan .possibleThing ul {
-  padding: 15px;
+  padding: 0px 15px;
   margin: 0px;
 }
 
 .plan .possibleThing li {
-  padding: 10px 0px;
+  padding: 15px;
   border-bottom: 0.5px solid var(--border-color);
 }
 
