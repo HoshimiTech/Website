@@ -9,9 +9,12 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  background-color: black;
+  background-color: var(--card-background);
+  color: var(--text-color);
   width: 30%;
   height: 350px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
 }
 
 .service span {
@@ -52,15 +55,15 @@
   display: inline-block;
   position: relative;
   padding: 10px 20px 10px 40px;
-  background: #23272a;
-  color: #fff;
+  background: var(--button-background);
+  color: var(--text-color);
   border-radius: 10px;
   text-decoration: none;
 }
 
 .goBack-to-serviceList a:hover {
   /* マウスオーバー時のスタイル */
-  background: #53575a;
+  background: var(--button-hover);
 }
 
 .goBack-to-serviceList a::before {
@@ -73,8 +76,8 @@
   left: 15px;
   width: 13px;
   height: 13px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-top: 2px solid var(--text-color);
+  border-right: 2px solid var(--text-color);
   transform: rotate(-135deg);
   animation: slideBlink 1s linear infinite;
   /* アニメーションの初期設定 */
@@ -134,7 +137,7 @@
 }
 
 .botDescriptionCellRight ul {
-  color: white;
+  color: var(--text-color);
 }
 
 .botDescription .btn {
@@ -160,7 +163,7 @@
 }
 
 .commandDescription table {
-  color: white;
+  color: var(--text-color);
   margin: 0 auto;
   border-collapse: collapse;
 }
@@ -168,7 +171,7 @@
 .commandDescription table,
 th,
 td {
-  border: 2px white solid;
+  border: 2px solid var(--border-color);
 }
 
 .commandDescription th,
@@ -189,7 +192,7 @@ td {
 }
 
 .mcedu-guide p {
-  color: #c0c0c0;
+  color: var(--text-gray-color);
 }
 
 /*スマホ対応*/

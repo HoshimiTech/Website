@@ -1,18 +1,56 @@
 <script>
-	document.addEventListener("click", (e) => {
-		if (!e.target.closest(".navbar")) {
-			const checkbox = document.querySelector("#menu-checkbox");
-			checkbox.checked = false;
-		}
-	});
+	(() => {
+		const themeStorageKey = 'themePreference';
+		const themeButtons = document.querySelectorAll('[data-theme-option]');
 
-	let menuCheckBox = document.getElementById("menu-checkbox");
-	let menu = document.querySelector(".menu");
-	menuCheckBox.addEventListener("change", () => {
-		if (!menuCheckBox.checked) {
-			menu.style.left = "-100%";
-		} else {
-			menu.style.left = 0;
-		}
-	});
+		const applyTheme = (theme) => {
+			const root = document.documentElement;
+
+			if (theme === 'light' || theme === 'dark') {
+				root.dataset.theme = theme;
+			} else {
+				delete root.dataset.theme;
+			}
+
+			themeButtons.forEach((button) => {
+				const isActive = button.dataset.themeOption === theme;
+				button.classList.toggle('is-active', isActive);
+				button.setAttribute('aria-pressed', String(isActive));
+			});
+		};
+
+		const savedTheme = localStorage.getItem(themeStorageKey) || 'system';
+		applyTheme(savedTheme);
+
+		themeButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				const selectedTheme = button.dataset.themeOption;
+				if (selectedTheme === 'system') {
+					localStorage.removeItem(themeStorageKey);
+					applyTheme('system');
+					return;
+				}
+
+				localStorage.setItem(themeStorageKey, selectedTheme);
+				applyTheme(selectedTheme);
+			});
+		});
+
+		document.addEventListener('click', (e) => {
+			if (!e.target.closest('.navbar')) {
+				const checkbox = document.querySelector('#menu-checkbox');
+				checkbox.checked = false;
+			}
+		});
+
+		const menuCheckBox = document.getElementById('menu-checkbox');
+		const menu = document.querySelector('.menu');
+		menuCheckBox.addEventListener('change', () => {
+			if (!menuCheckBox.checked) {
+				menu.style.left = '-100%';
+			} else {
+				menu.style.left = 0;
+			}
+		});
+	})();
 </script>

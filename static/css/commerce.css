@@ -5,18 +5,18 @@
 }
 
 .page-content table {
-  color: white;
+  color: var(--text-color);
   width: 75%;
   margin: 0px auto;
   margin-bottom: 80px;
-  border: 1px white solid;
+  border: 1px solid var(--border-color);
   /*表の罫線を１本ずつだけ表示するため*/
   border-collapse: collapse;
 }
 
 .page-content th,
 td {
-  border: 1px white solid;
+  border: 1px solid var(--border-color);
   padding: 10px;
   /*文字を適度に改行する*/
   word-break: keep-all;

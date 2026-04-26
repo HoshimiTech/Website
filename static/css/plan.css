@@ -9,9 +9,12 @@
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  background-color: black;
+  background-color: var(--card-background);
+  color: var(--text-color);
   width: 290px;
   height: 415px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
 }
 
 .plan span {
@@ -32,9 +35,9 @@
 }
 
 .plan .possibleThing {
-  color: white;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .plan .possibleThing ul {
@@ -44,7 +47,7 @@
 
 .plan .possibleThing li {
   padding: 10px 0px;
-  border-bottom: 0.5px solid gray;
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 .plan .possibleThing li.lastOption {
@@ -58,17 +61,4 @@
 .buyButton a {
   font-size: unset;
   font-weight: bold;
-}
-
-@media screen and (min-width: 1091px) {
-  .footer {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    width: 100%;
-  }
-
-  .page-content {
-    margin-bottom: 118px;
-  }
 }
