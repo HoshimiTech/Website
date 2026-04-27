@@ -1,0 +1,8 @@
+{
+	"botInviteURLs": {
+		"HoshimiTech-BOT": "https://discord.com/oauth2/authorize?client_id=949289830481821776&permissions=279444581776&integration_type=0&scope=bot+applications.commands",
+		"JINBE": "https://discord.com/oauth2/authorize?client_id=988951430075396167&permissions=274878024896&integration_type=0&scope=bot+applications.commands",
+		"HoshimiTech-Music": "https://discord.com/oauth2/authorize?client_id=1068419786314350693&permissions=279176398976&integration_type=0&scope=bot+applications.commands"
+	},
+	"supportServerInviteURL": "https://discord.gg/uYYaVRuUuJ"
+}

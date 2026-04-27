@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const botConfig = require('./botConfig.json');
 
 module.exports = (app) => {
 	router.get('/robots.txt', (req, res) => {
@@ -141,7 +142,7 @@ module.exports = (app) => {
 	///////////////////////////////////////////////////////
 	// 各種リダイレクト設定
 	router.get('/support-server', (req, res) => {
-		res.redirect('https://discord.gg/uYYaVRuUuJ');
+		res.redirect(botConfig.supportServerInviteURL);
 	});
 
 	router.get('/services/mcedu-portal', (req, res) => {

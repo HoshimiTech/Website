@@ -3,6 +3,9 @@ const app = express();
 const path = require('path');
 require('dotenv').config({ quiet: true });
 
+// BOTの設定を読み込み
+const botConfig = require('./botConfig.json');
+
 let port = process.env.port || 80;
 app.set('port', port);
 
@@ -21,6 +24,7 @@ app.use((req, res, next) => {
 	res.locals.siteOgImage = `${siteUrl}/image/logo.png`;
 	res.locals.robots = '';
 	res.locals.dashboardURL = process.env.DASHBOARD_URL;
+	res.locals.botConfig = botConfig;
 
 	next();
 });
