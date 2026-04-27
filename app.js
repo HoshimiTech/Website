@@ -3,10 +3,11 @@ const app = express();
 const path = require('path');
 require('dotenv').config({ quiet: true });
 
-let port = process.env.port;
+let port = process.env.port || 80;
 app.set('port', port);
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.use('/css', express.static(path.join(__dirname, 'static/css')));
 app.use('/image', express.static(path.join(__dirname, 'static/image')));
