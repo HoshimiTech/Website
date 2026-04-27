@@ -144,18 +144,9 @@
   text-align: left;
 }
 
-.botDescription a.mobile {
-  display: inline;
-}
-
-.botDescription .mobile {
-  display: none;
-}
-
 .commandDescription {
-  width: 75%;
+  width: 80%;
   margin: 0px auto;
-  padding: 20px
 }
 
 .commandDescription h3 {
@@ -223,20 +214,12 @@ td {
     margin: 0 auto;
   }
 
-  .botDescription .mobile {
-    display: block;
-  }
-
-  .botDescription .btn a,
-  .mobile a {
+  .botDescription .btn a {
     display: block;
     width: 100%;
     text-align: center;
     margin: 5px 0;
-  }
-
-  .botDescription a.mobile {
-    display: none;
+    box-sizing: border-box;
   }
 
   .commandDescription table {
