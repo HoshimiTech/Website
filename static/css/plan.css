@@ -12,7 +12,7 @@
   background-color: var(--card-background);
   color: var(--text-color);
   width: 290px;
-  height: 420px;
+  height: 430px;
   border: 1px solid var(--card-border);
   border-radius: 10px;
 }
@@ -61,4 +61,6 @@
 .buyButton a {
   font-size: unset;
   font-weight: bold;
+  color: var(--theme-switcher-active-text);
+  background-color: var(--theme-switcher-active-background);
 }

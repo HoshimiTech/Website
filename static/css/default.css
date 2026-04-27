@@ -8,12 +8,13 @@
   --border-color: black;
   --button-background: #e9f0fb;
   --button-hover: #d8e4fa;
-  --text-color: #1f2937;
+  --text-color: black;
   --text-gray-color: #64748b;
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
   --theme-switcher-inactive: #607087;
   --theme-switcher-active-text: white;
+  --theme-switcher-hover-text: black;
   --theme-switcher-active-background: #4e6fe0;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
@@ -40,6 +41,7 @@
     --url-text-hover-color: #7792f3;
     --theme-switcher-inactive: #cbd5e1;
     --theme-switcher-active-text: white;
+    --theme-switcher-hover-text: white;
     --theme-switcher-active-background: #6070cc;
     --focus-border-color: #7792f3;
     --accordion-title-background: #30363b;
@@ -60,12 +62,13 @@ html[data-theme="light"] {
   --border-color: black;
   --button-background: #e9f0fb;
   --button-hover: #d8e4fa;
-  --text-color: #1f2937;
+  --text-color: black;
   --text-gray-color: #64748b;
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
   --theme-switcher-inactive: #607087;
   --theme-switcher-active-text: white;
+  --theme-switcher-hover-text: black;
   --theme-switcher-active-background: #4e6fe0;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
@@ -91,6 +94,7 @@ html[data-theme="dark"] {
   --url-text-hover-color: #7792f3;
   --theme-switcher-inactive: #cbd5e1;
   --theme-switcher-active-text: white;
+  --theme-switcher-hover-text: white;
   --theme-switcher-active-background: #6070cc;
   --focus-border-color: #7792f3;
   --accordion-title-background: #30363b;
@@ -448,7 +452,7 @@ a.button_arrow::before {
 }
 
 .footer .theme-switcher__track button:hover {
-  color: var(--theme-switcher-active-text);
+  color: var(--theme-switcher-hover-text);
 }
 
 .footer .theme-switcher__track button.is-active {
