@@ -94,7 +94,7 @@ module.exports = (app) => {
 		res.render('plan', {
 			pageTitle: 'プラン｜HoshimiTech',
 			pageDescription:
-				'HoshimiTechのサブスクリプションプランの詳細と価格を掲載しています。月額250円からご利用いただけます。',
+				'HoshimiTechのサブスクリプションプランの詳細と価格を掲載しています。',
 		});
 	});
 
