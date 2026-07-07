@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const botConfig = require('./botConfig.json');
+const projectConfig = require('./projectConfig.json');
 
 module.exports = (app) => {
 	router.get('/robots.txt', (req, res) => {
@@ -10,11 +10,9 @@ module.exports = (app) => {
 		res
 			.type('text/plain')
 			.send(
-				[
-					'User-agent: *',
-					'Allow: /',
-					`Sitemap: ${baseUrl}/sitemap.xml`,
-				].join('\n'),
+				['User-agent: *', 'Allow: /', `Sitemap: ${baseUrl}/sitemap.xml`].join(
+					'\n',
+				),
 			);
 	});
 
@@ -141,10 +139,6 @@ module.exports = (app) => {
 
 	///////////////////////////////////////////////////////
 	// 各種リダイレクト設定
-	router.get('/support-server', (req, res) => {
-		res.redirect(botConfig.supportServerInviteURL);
-	});
-
 	router.get('/services/mcedu-portal', (req, res) => {
 		//一時的にページに飛ぶようにしているが、サイトが用意出来次第そっちへリダイレクト予定
 		res.render('services/mcedu-portal', {
