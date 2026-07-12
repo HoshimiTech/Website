@@ -1,0 +1,15 @@
+.page-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-contents {
+  text-align: center;
+  margin: auto 0px;
+}
+
+.home-contents p {
+  width: 75%;
+  margin: 30px auto;
+}
