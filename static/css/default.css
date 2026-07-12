@@ -221,10 +221,18 @@ p {
   vertical-align: middle;
 }
 
-.navbar .nav_table a.menu-button_long {
+.navbar .nav_table a.menu-button_medium {
   display: table-cell;
   padding: 0;
   width: 130px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.navbar .nav_table a.menu-button_long {
+  display: table-cell;
+  padding: 0;
+  width: 225px;
   text-align: center;
   vertical-align: middle;
 }

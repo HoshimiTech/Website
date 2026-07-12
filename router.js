@@ -29,7 +29,7 @@ module.exports = (app) => {
 			'/services/mcedu-portal',
 			'/plan',
 			'/faq',
-			'/about-us',
+			'/about-project',
 			'/docs/commerce',
 			'/docs/privacy-policy',
 			'/docs/terms',
@@ -104,9 +104,9 @@ module.exports = (app) => {
 		});
 	});
 
-	router.get('/about-us', (req, res) => {
-		res.render('about-us', {
-			pageTitle: '私たちについて｜HoshimiTech',
+	router.get('/about-project', (req, res) => {
+		res.render('about-project', {
+			pageTitle: 'このプロジェクトについて｜HoshimiTech',
 			pageDescription:
 				'HoshimiTechは、Discord BOT開発や教育版Minecraft関連情報を発信する公式サイトです。',
 		});
