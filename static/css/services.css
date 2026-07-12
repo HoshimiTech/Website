@@ -149,10 +149,6 @@
   margin: 0px auto;
 }
 
-.commandDescription h3 {
-  width: 200px;
-}
-
 .commandDescription table {
   color: var(--text-color);
   margin: 0 auto;
