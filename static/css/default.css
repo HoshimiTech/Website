@@ -491,6 +491,10 @@ input[type='checkbox'] {
     display: none;
   }
 
+  .navbar .nav_table a.menu-button_medium {
+    display: none;
+  }
+
   .navbar .nav_table a.menu-button_long {
     display: none;
   }
