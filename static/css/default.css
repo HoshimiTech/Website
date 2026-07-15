@@ -12,14 +12,14 @@
   --text-gray-color: #64748b;
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
-  --theme-switcher-inactive: #607087;
+  --theme-switcher-inactive: #506077;
   --theme-switcher-active-text: white;
   --theme-switcher-hover-text: black;
-  --theme-switcher-active-background: #4e6fe0;
+  --theme-switcher-active-background: #5060bc;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
   --accordion-content-background: #dae6ff;
-  --accordion-border-color: #7b8de6;
+  --accordion-border-color: #5060bc;
   --card-background: white;
   --card-border: rgba(31, 41, 55, 0.12);
   --contact-icon-color-changer: 100%;
@@ -42,11 +42,11 @@
     --theme-switcher-inactive: #cbd5e1;
     --theme-switcher-active-text: white;
     --theme-switcher-hover-text: white;
-    --theme-switcher-active-background: #6070cc;
+    --theme-switcher-active-background: #5060bc;
     --focus-border-color: #7792f3;
     --accordion-title-background: #30363b;
     --accordion-content-background: #30409c;
-    --accordion-border-color: #6070cc;
+    --accordion-border-color: #5060bc;
     --card-background: #23272a;
     --card-border: rgba(255, 255, 255, 0.2);
     --contact-icon-color-changer: 0%;
@@ -66,14 +66,14 @@ html[data-theme="light"] {
   --text-gray-color: #64748b;
   --url-text-color: #2f4fb6;
   --url-text-hover-color: #1f3da1;
-  --theme-switcher-inactive: #607087;
+  --theme-switcher-inactive: #506077;
   --theme-switcher-active-text: white;
   --theme-switcher-hover-text: black;
-  --theme-switcher-active-background: #4e6fe0;
+  --theme-switcher-active-background: #5060bc;
   --focus-border-color: #2f5dd8;
   --accordion-title-background: #ebf1ff;
   --accordion-content-background: #dae6ff;
-  --accordion-border-color: #7b8de6;
+  --accordion-border-color: #5060bc;
   --card-background: white;
   --card-border: rgba(31, 41, 55, 0.12);
   --contact-icon-color-changer: 100%;
@@ -95,11 +95,11 @@ html[data-theme="dark"] {
   --theme-switcher-inactive: #cbd5e1;
   --theme-switcher-active-text: white;
   --theme-switcher-hover-text: white;
-  --theme-switcher-active-background: #6070cc;
+  --theme-switcher-active-background: #5060bc;
   --focus-border-color: #7792f3;
   --accordion-title-background: #30363b;
   --accordion-content-background: #30409c;
-  --accordion-border-color: #6070cc;
+  --accordion-border-color: #5060bc;
   --card-background: #23272a;
   --card-border: rgba(255, 255, 255, 0.2);
   --contact-icon-color-changer: 0%;
@@ -241,7 +241,7 @@ p {
   margin: auto 0px;
 }
 
-.body-text h3,
+.body-text h2,
 .body-text p,
 .body-text ol,
 .body-text ul {
@@ -402,7 +402,7 @@ a.button_arrow::before {
 .footer div {
   display: inline-block;
   padding: 0px 25px;
-  margin: 20px 0px;
+  margin: 15px 0px;
 }
 
 .footer div h2 {
