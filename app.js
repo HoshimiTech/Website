@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const app = express();
 const path = require('path');
 require('dotenv').config({ quiet: true });
@@ -14,6 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/css', express.static(path.join(__dirname, 'static/css')));
 app.use('/image', express.static(path.join(__dirname, 'static/image')));
+
+// Gzip圧縮を有効化
+app.use(compression());
 
 app.use((req, res, next) => {
 	const siteUrl = (
