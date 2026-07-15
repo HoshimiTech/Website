@@ -17,13 +17,13 @@ app.use('/image', express.static(path.join(__dirname, 'static/image')));
 
 app.use((req, res, next) => {
 	const siteUrl = (
-		process.env.SITE_URL || `${req.protocol}://${req.get('host')}`
+		`${req.protocol}://${projectConfig.landingPageDomain}` ||
+		`${req.protocol}://${req.get('host')}`
 	).replace(/\/$/, '');
 
 	res.locals.siteURL = `${siteUrl}${req.path}`;
 	res.locals.siteOgImage = `${siteUrl}/image/logo.png`;
 	res.locals.robots = '';
-	res.locals.dashboardURL = process.env.DASHBOARD_URL;
 	res.locals.projectConfig = projectConfig;
 
 	next();
@@ -32,13 +32,18 @@ app.use((req, res, next) => {
 require('./router')(app);
 
 app.use((err, req, res, next) => {
+	const siteUrl = (
+		`${req.protocol}://${projectConfig.landingPageDomain}` ||
+		`${req.protocol}://${req.get('host')}`
+	).replace(/\/$/, '');
+
 	console.error(err.stack);
 	res.status(500).render('error/500 serverError', {
 		pageTitle: '500 INTERNAL SERVER ERROR｜HoshimiTech',
 		pageDescription:
 			'サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。',
 		robots: 'noindex,nofollow',
-		siteURL: `${process.env.SITE_URL}/500`,
+		siteURL: `${siteUrl}/500`,
 	});
 });
 

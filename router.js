@@ -4,7 +4,8 @@ const projectConfig = require('./projectConfig.json');
 module.exports = (app) => {
 	router.get('/robots.txt', (req, res) => {
 		const baseUrl = (
-			process.env.SITE_URL || `${req.protocol}://${req.get('host')}`
+			`${req.protocol}://${projectConfig.landingPageDomain}` ||
+			`${req.protocol}://${req.get('host')}`
 		).replace(/\/$/, '');
 
 		res
@@ -18,8 +19,10 @@ module.exports = (app) => {
 
 	router.get('/sitemap.xml', (req, res) => {
 		const baseUrl = (
-			process.env.SITE_URL || `${req.protocol}://${req.get('host')}`
+			`${req.protocol}://${projectConfig.landingPageDomain}` ||
+			`${req.protocol}://${req.get('host')}`
 		).replace(/\/$/, '');
+
 		const paths = [
 			'/',
 			'/services',
@@ -155,12 +158,17 @@ module.exports = (app) => {
 
 	// 定義されていないルートへのアクセスは404にする
 	app.use((req, res) => {
+		const baseUrl = (
+			`${req.protocol}://${projectConfig.landingPageDomain}` ||
+			`${req.protocol}://${req.get('host')}`
+		).replace(/\/$/, '');
+
 		res.status(404).render('error/404 notFound', {
 			pageTitle: '404 NOT FOUND｜HoshimiTech',
 			pageDescription:
 				'お探しのページは見つかりませんでした。URLが正しいか確認してください。',
 			robots: 'noindex,nofollow',
-			siteURL: `${process.env.SITE_URL}/404`,
+			siteURL: `${baseUrl}/404`,
 		});
 	});
 };
