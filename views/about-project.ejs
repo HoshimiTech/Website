@@ -8,8 +8,35 @@
 		<%- include('common_contents/navbar.ejs') %>
 
 		<div class="page-content">
-			<h1>ようこそ</h1>
-			<p>私たちについてです。</p>
+			<div class="body-text">
+				<h1>このプロジェクトについて</h1>
+				<p>
+					このプロジェクトはHoshimiTechと言い、Hoshimikan6490によって開発・運用されています。開発者については、以下のページをご覧ください。
+				</p>
+
+				<div class="btn">
+					<a href="https://hoshimikan6490.com" class="button_arrow"
+						>開発者の個人サイトを見る</a
+					>
+				</div>
+
+				<p>
+					以前は、Planet Bot
+					Projectと言う名前で稼働していましたが、「Planet要素無くね？」と思い、現在の名前へと変更しました。
+				</p>
+				<p>
+					また、このプロジェクトのロゴには、開発者の「星みかん」を基に作られています。
+				</p>
+				<br />
+				<p>
+					その他、ご不明な点やご質問は、<a
+						href="<%- projectConfig.supportServerInviteURL %>"
+						target="_blank"
+						rel="noopener noreferrer"
+						>サポートサーバー</a
+					>にてお問い合わせください。
+				</p>
+			</div>
 		</div>
 
 		<%- include('common_contents/footer.ejs') %>
