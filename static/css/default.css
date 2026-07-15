@@ -242,9 +242,9 @@ p {
 }
 
 .body-text h3,
-p,
-ol,
-ul {
+.body-text p,
+.body-text ol,
+.body-text ul {
   width: 75%;
   margin: 30px auto;
 }
