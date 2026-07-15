@@ -237,6 +237,18 @@ p {
   vertical-align: middle;
 }
 
+.body-text {
+  margin: auto 0px;
+}
+
+.body-text h3,
+p,
+ol,
+ul {
+  width: 75%;
+  margin: 30px auto;
+}
+
 .menu {
   display: none;
 }
