@@ -98,17 +98,17 @@ module.exports = (app) => {
 	// ドキュメントページの定義
 	const commerceConfig = getPageConfig('docs/commerce');
 	router.get('/docs/commerce', (req, res) => {
-		res.render('documents/commerce', commerceConfig);
+		res.render('docs/commerce', commerceConfig);
 	});
 
 	const privacyPolicyConfig = getPageConfig('docs/privacy-policy');
 	router.get('/docs/privacy-policy', (req, res) => {
-		res.render('documents/privacy-policy', privacyPolicyConfig);
+		res.render('docs/privacy-policy', privacyPolicyConfig);
 	});
 
 	const termsConfig = getPageConfig('docs/terms');
 	router.get('/docs/terms', (req, res) => {
-		res.render('documents/terms', termsConfig);
+		res.render('docs/terms', termsConfig);
 	});
 	///////////////////////////////////////////////////////
 
