@@ -6,6 +6,8 @@ require('dotenv').config({ quiet: true });
 
 // BOTの設定を読み込み
 const projectConfig = require('./projectConfig.json');
+// サイト設定の読み込み
+const siteConfig = require('./siteConfig.json');
 
 let port = process.env.port || 80;
 app.set('port', port);
@@ -19,14 +21,12 @@ app.use('/image', express.static(path.join(__dirname, 'static/image')));
 // Gzip圧縮を有効化
 app.use(compression());
 
-app.use((req, res, next) => {
-	const siteUrl = (
-		`${req.protocol}://${projectConfig.landingPageDomain}` ||
-		`${req.protocol}://${req.get('host')}`
-	).replace(/\/$/, '');
+// サイトの標準URLを定義
+const siteBaseUrl = `https://${projectConfig.landingPageDomain}`;
 
-	res.locals.siteURL = `${siteUrl}${req.path}`;
-	res.locals.siteOgImage = `${siteUrl}/image/logo.png`;
+app.use((req, res, next) => {
+	res.locals.siteURL = `${siteBaseUrl}${req.path}`;
+	res.locals.siteOgImage = `${siteBaseUrl}/image/logo.png`;
 	res.locals.robots = '';
 	res.locals.projectConfig = projectConfig;
 
@@ -36,19 +36,15 @@ app.use((req, res, next) => {
 require('./router')(app);
 
 app.use((err, req, res, next) => {
-	const siteUrl = (
-		`${req.protocol}://${projectConfig.landingPageDomain}` ||
-		`${req.protocol}://${req.get('host')}`
-	).replace(/\/$/, '');
-
 	console.error(err.stack);
-	res.status(500).render('error/500 serverError', {
-		pageTitle: '500 INTERNAL SERVER ERROR｜HoshimiTech',
-		pageDescription:
-			'サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。',
-		robots: 'noindex,nofollow',
-		siteURL: `${siteUrl}/500`,
-	});
+	const serverErrorConfig = {
+		...siteConfig['500 serverError'],
+		siteURL: siteConfig['500 serverError'].siteURL?.replace(
+			'${siteUrl}',
+			siteBaseUrl,
+		),
+	};
+	res.status(500).render('error/500 serverError', serverErrorConfig);
 });
 
 app.listen(port, () => console.info(`Listening on port ${port}`));
