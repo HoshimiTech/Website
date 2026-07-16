@@ -58,9 +58,9 @@ module.exports = (app) => {
 
 	///////////////////////////////////////////////////////
 	// 各種サービスページの定義
-	const servicesConfig = getPageConfig('services/service_list');
+	const servicesConfig = getPageConfig('services');
 	router.get('/services', (req, res) => {
-		res.render('services/service_list', servicesConfig);
+		res.render('services', servicesConfig);
 	});
 
 	const jinbeConfig = getPageConfig('services/jinbe');

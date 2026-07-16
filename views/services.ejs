@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 	<head>
-		<%- include("../common_contents/head.ejs") %>
+		<%- include("common_contents/head.ejs") %>
 
 		<link rel="stylesheet" type="text/css" href="/css/services.css" />
 	</head>
 
 	<body>
-		<%- include('../common_contents/navbar.ejs') %>
+		<%- include('common_contents/navbar.ejs') %>
 
 		<div class="page-content">
 			<h1>サービス一覧</h1>
@@ -60,7 +60,10 @@
 				</div>
 				<div class="service">
 					<span>
-						<img src="/image/no-image.png" alt="開発中のサービスのため画像が無い旨が示されている画像" />
+						<img
+							src="/image/no-image.png"
+							alt="開発中のサービスのため画像が無い旨が示されている画像"
+						/>
 						<h2>準備中...</h2>
 						<p>準備中...</p>
 						<div class="btn" style="cursor: not-allowed; padding: 10px 0px">
@@ -71,8 +74,8 @@
 			</div>
 		</div>
 
-		<%- include('../common_contents/footer.ejs') %>
+		<%- include('common_contents/footer.ejs') %>
 	</body>
 
-	<%- include('../common_contents/menu_Script.ejs') %>
+	<%- include('common_contents/menu_Script.ejs') %>
 </html>

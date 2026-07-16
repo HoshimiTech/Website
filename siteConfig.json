@@ -17,7 +17,7 @@
 		"robots": "",
 		"siteURL": "${siteUrl}/"
 	},
-	"services/service_list": {
+	"services": {
 		"pageTitle": "サービス｜HoshimiTech",
 		"pageDescription": "HoshimiTechが提供する各種サービスの一覧ページです。",
 		"robots": "",
