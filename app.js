@@ -38,8 +38,8 @@ require('./router')(app);
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	const serverErrorConfig = {
-		...siteConfig['500 serverError'],
-		siteURL: siteConfig['500 serverError'].siteURL?.replace(
+		...siteConfig['error/500 serverError'],
+		siteURL: siteConfig['error/500 serverError'].siteURL?.replace(
 			'${siteUrl}',
 			siteBaseUrl,
 		),

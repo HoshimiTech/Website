@@ -58,7 +58,7 @@ module.exports = (app) => {
 
 	///////////////////////////////////////////////////////
 	// 各種サービスページの定義
-	const servicesConfig = getPageConfig('service_list');
+	const servicesConfig = getPageConfig('services/service_list');
 	router.get('/services', (req, res) => {
 		res.render('services/service_list', servicesConfig);
 	});
@@ -127,7 +127,7 @@ module.exports = (app) => {
 
 	// 定義されていないルートへのアクセスは404にする
 	app.use((req, res) => {
-		const notFoundConfig = getPageConfig("404 notFound")
+		const notFoundConfig = getPageConfig('error/404 notFound');
 		res.status(404).render('error/404 notFound', notFoundConfig);
 	});
 };

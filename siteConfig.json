@@ -1,10 +1,4 @@
 {
-	"500 serverError": {
-		"pageTitle": "500 INTERNAL SERVER ERROR｜HoshimiTech",
-		"pageDescription": "サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。",
-		"robots": "noindex,nofollow",
-		"siteURL": "${siteUrl}/500"
-	},
 	"robots.txt": {
 		"pageTitle": "",
 		"pageDescription": "",
@@ -23,7 +17,7 @@
 		"robots": "",
 		"siteURL": "${siteUrl}/"
 	},
-	"service_list": {
+	"services/service_list": {
 		"pageTitle": "サービス｜HoshimiTech",
 		"pageDescription": "HoshimiTechが提供する各種サービスの一覧ページです。",
 		"robots": "",
@@ -89,10 +83,22 @@
 		"robots": "",
 		"siteURL": "${siteUrl}/docs/terms"
 	},
-	"404 notFound": {
+	"error/404 notFound": {
 		"pageTitle": "404 NOT FOUND｜HoshimiTech",
 		"pageDescription": "お探しのページは見つかりませんでした。URLが正しいかご確認ください。",
 		"robots": "noindex,nofollow",
 		"siteURL": "${siteUrl}/404"
+	},
+	"error/500 serverError": {
+		"pageTitle": "500 INTERNAL SERVER ERROR｜HoshimiTech",
+		"pageDescription": "サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。",
+		"robots": "noindex,nofollow",
+		"siteURL": "${siteUrl}/500"
+	},
+	"error/400 badRequest": {
+		"pageTitle": "400 BAD REQUEST｜HoshimiTech",
+		"pageDescription": "リクエストが不正です。URLが正しいかご確認ください。",
+		"robots": "noindex,nofollow",
+		"siteURL": "${siteUrl}/400"
 	}
 }
