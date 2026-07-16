@@ -1,21 +1,26 @@
 {
-	"name": "discord.js-dashboard",
-	"version": "1.0.0",
-	"description": "",
-	"main": "app.js",
-	"scripts": {
-		"main": "node app.js",
-		"build": "node build.js"
-	},
-	"engines": {
-		"node": ">=18"
-	},
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"compression": "^1.8.1",
-		"dotenv": "^17.4.2",
-		"ejs": "^6.0.1",
-		"express": "^5.2.1"
-	}
+  "name": "discord.js-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "main": "node app.js",
+    "build": "node build.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.111.0"
+  }
 }
