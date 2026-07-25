@@ -3,30 +3,15 @@ const path = require('path');
 const ejs = require('ejs');
 
 // BOTの設定を読み込み
-const projectConfig = require('./projectConfig.json');
+const projectConfig = require('../src/public/projectConfig.json');
 // サイト設定の読み込み
-const siteConfig = require('./siteConfig.json');
+const siteConfig = require('../src/public/siteConfig.json');
+const pages = siteConfig.pages;
 // サイトのベースURLを作成
 const siteBaseUrl = `https://${projectConfig.landingPageDomain}`;
 
-const viewsDirectory = 'views';
-const buildDirectory = 'build';
-
-const paths = {
-	'/': 'Homepage',
-	'/services': 'Services list',
-	'/services/jinbe': 'description for Jinbe BOT',
-	'/services/HoshimiTech-BOT': 'description for HoshimiTech-BOT',
-	'/services/HoshimiTech-Music': 'description for HoshimiTech-Music',
-	'/services/mcedu-portal':
-		'description for Unofficial Minecraft Education Japanese Portal',
-	'/plan': 'Pricing plan',
-	'/faq': 'Frequently Asked Questions',
-	'/about-project': 'About the Project',
-	'/docs/commerce': 'Commerce Policy',
-	'/docs/privacy-policy': 'Privacy Policy',
-	'/docs/terms': 'Terms of Service',
-};
+const viewsDirectory = 'src/views';
+const buildDirectory = 'dist';
 
 async function build() {
 	// 前回の生成物を残さず、出力先を必ず用意する。
@@ -35,8 +20,8 @@ async function build() {
 
 	await renderViews(viewsDirectory);
 
-	// static 配下の内容を build 配下へコピーする。
-	fs.cpSync('static', buildDirectory, { recursive: true });
+	// public 配下の内容を build 配下へコピーする。
+	fs.cpSync('src/public', buildDirectory, { recursive: true });
 	fs.rmSync(path.join(buildDirectory, '画像の出典.md'), { force: true });
 	fs.rmSync(path.join(buildDirectory, 'agent-tools.js'), { force: true });
 
@@ -68,7 +53,7 @@ async function renderEjsFile(inputPath, outputPath) {
 		.relative(viewsDirectory, inputPath)
 		.replace(/\\/g, '/')
 		.replace(/\.ejs$/, '');
-	const pageSettings = siteConfig[configKey];
+	const pageSettings = pages.find((page) => page.name === configKey);
 
 	if (!pageSettings) {
 		throw new Error(`siteConfig.json にページ設定がありません: ${configKey}`);
@@ -76,9 +61,9 @@ async function renderEjsFile(inputPath, outputPath) {
 
 	const pageConfig = {
 		siteBaseUrl,
-		siteOgImage: `${siteBaseUrl}/image/logo.png`,
+		siteOgImage: `${siteBaseUrl}/images/logo.png`,
 		...pageSettings,
-		siteURL: pageSettings.siteURL?.replace('${siteUrl}', siteBaseUrl),
+		siteURL: siteBaseUrl + (pageSettings.siteURL || ''),
 		projectConfig,
 	};
 
@@ -102,10 +87,8 @@ async function writeSearchEngineFiles() {
 	);
 
 	// sitemap.xmlを生成
-	const urlset = Object.keys(paths)
-		.map((pagePath) => `<url><loc>${siteBaseUrl}${pagePath}</loc></url>`)
-		.join('');
-	const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urlset}</urlset>`;
+	const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map((page) => `<url><loc>${siteBaseUrl}${page.path}</loc><changefreq>${page.changefreq}</changefreq><priority>${page.priority}</priority></url>`).join('')}
+</urlset>`;
 	fs.writeFileSync(
 		path.join(buildDirectory, 'sitemap.xml'),
 		sitemapContent,
@@ -123,19 +106,18 @@ async function writeOpenAPIConfigFile() {
 		},
 	};
 	// pathの追加
-	for (const [pagePath, description] of Object.entries(paths)) {
-		openAPIConfig.paths = openAPIConfig.paths || {};
-		openAPIConfig.paths[pagePath] = {
-			get: {
-				summary: description,
-				responses: {
-					200: {
-						description: 'Successful response',
-					},
+	openAPIConfig.paths = Object.fromEntries(
+		pages.map((page) => [
+			page.path,
+			{
+				get: {
+					summary: page.title,
+					description: page.description,
+					responses: { 200: { description: 'Successful response' } },
 				},
 			},
-		};
-	}
+		]),
+	);
 	// openapi.jsonを生成
 	fs.writeFileSync(
 		path.join(buildDirectory, 'openapi.json'),
@@ -156,7 +138,7 @@ async function writeOpenAPIConfigFile() {
 
 	// agent-toolsの生成
 	fs.copyFileSync(
-		path.join(__dirname, 'static', 'scripts', 'agent-tools.js'),
+		path.join(__dirname, '../src/public/scripts/agent-tools.js'),
 		path.join(buildDirectory, 'agent-tools.js'),
 	);
 }

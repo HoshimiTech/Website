@@ -1,4 +1,9 @@
 (() => {
+	import siteConfig from '../siteConfig.json' assert { type: 'json' };
+	const pages = siteConfig.pages;
+	const pageNames = pages.map((page) => page.name);
+	const pagePaths = pages.map((page) => ({ [page.name]: page.path }));
+
 	const modelContext = navigator.modelContext;
 
 	if (!modelContext || typeof modelContext.registerTool !== 'function') {
@@ -16,20 +21,7 @@
 				properties: {
 					target: {
 						type: 'string',
-						enum: [
-							'home',
-							'services',
-							'plan',
-							'faq',
-							'about-project',
-							'HoshimiTech-BOT',
-							'HoshimiTech-Music',
-							'JINBE',
-							'mcedu-portal',
-							'docs-commerce',
-							'docs-privacy-policy',
-							'docs-api',
-						],
+						enum: pageNames,
 					},
 				},
 				required: ['target'],
@@ -39,22 +31,7 @@
 				readOnlyHint: false,
 			},
 			execute: async ({ target }) => {
-				const destinations = {
-					home: '/',
-					services: '/services',
-					plan: '/plan',
-					faq: '/faq',
-					'about-project': '/about-project',
-					'HoshimiTech-BOT': '/services/HoshimiTech-BOT',
-					'HoshimiTech-Music': '/services/HoshimiTech-Music',
-					JINBE: '/services/jinbe',
-					'mcedu-portal': '/services/mcedu-portal',
-					'docs-commerce': '/docs/commerce',
-					'docs-privacy-policy': '/docs/privacy-policy',
-					'docs-api': '/docs/api',
-				};
-
-				const destination = destinations[target] || '/';
+				const destination = pagePaths.find((path) => path[target]) || '/';
 				window.location.assign(destination);
 				return {
 					status: 'navigating',
