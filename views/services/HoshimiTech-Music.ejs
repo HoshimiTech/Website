@@ -20,14 +20,11 @@
 				<div class="botDescriptionCellRight">
 					<h1>HoshimiTech Music</h1>
 					<div class="btn">
+						<script src="/scripts/alart.js"></script>
 						<a
 							target="_blank"
 							rel="noopener noreferrer"
-							onclick="
-								window.alert(
-									'現在、開発上の都合により、招待URLを非公開にしています。',
-								)
-							"
+							id="invalidBotAddButton"
 							>BOTをサーバーに追加</a
 						>
 						<a
@@ -531,6 +528,4 @@
 
 		<%- include('../common_contents/footer.ejs') %>
 	</body>
-
-	<%- include('../common_contents/menu_Script.ejs') %>
 </html>
