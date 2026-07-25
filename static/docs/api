@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/images/logo.ico" />
+		<link rel="apple-touch-icon" href="/images/logo.ico" />
+		<link rel="stylesheet" href="/style.css" type="text/css" />
+		<title>API ドキュメント｜Hoshimikan6490</title>
+	</head>
+	<body>
+		<main>
+			<div class="section">
+				<h1>API ドキュメント</h1>
+				<p>
+					このページは、エージェント向けの discovery
+					メタデータとエンドポイントをまとめた案内です。
+				</p>
+				<ul>
+					<li><a href="/.well-known/api-catalog">API カタログ</a></li>
+					<li><a href="/openapi.json">OpenAPI 定義</a></li>
+					<li><a href="/healthz">ヘルスチェック</a></li>
+					<li>
+						<a href="/.well-known/openid-configuration">OIDC ディスカバリ</a>
+					</li>
+					<li>
+						<a href="/.well-known/oauth-protected-resource"
+							>OAuth 保護リソース</a
+						>
+					</li>
+					<li>
+						<a href="/.well-known/mcp/server-card.json">MCP サーバーカード</a>
+					</li>
+					<li>
+						<a href="/.well-known/agent-skills/index.json"
+							>Agent Skills インデックス</a
+						>
+					</li>
+				</ul>
+				<p><a href="/">ホームに戻る</a></p>
+			</div>
+		</main>
+	</body>
+</html>

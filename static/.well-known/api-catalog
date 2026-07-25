@@ -1,0 +1,25 @@
+{
+	"linkset": [
+		{
+			"anchor": "https://hoshimitech.hoshimikan6490.com/",
+			"service-desc": [
+				{
+					"href": "https://hoshimitech.hoshimikan6490.com/openapi.json",
+					"type": "application/vnd.oai.openapi+json"
+				}
+			],
+			"service-doc": [
+				{
+					"href": "https://hoshimitech.hoshimikan6490.com/docs/api",
+					"type": "text/html"
+				}
+			],
+			"status": [
+				{
+					"href": "https://hoshimitech.hoshimikan6490.com/healthz",
+					"type": "application/json"
+				}
+			]
+		}
+	]
+}

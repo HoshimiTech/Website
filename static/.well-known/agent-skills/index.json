@@ -1,0 +1,12 @@
+{
+	"$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+	"skills": [
+		{
+			"name": "site-discovery",
+			"type": "skill-md",
+			"description": "Agent discovery resources and entry points for the site.",
+			"url": "https://hoshimitech.hoshimikan6490.com/.well-known/agent-skills/site-discovery/SKILL.md",
+			"digest": "sha256:d3e7492c958ff1072893473625ce2f0dca43e2cd6ff48964acd21fd9aed5044f"
+		}
+	]
+}
