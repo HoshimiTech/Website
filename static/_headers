@@ -1,0 +1,67 @@
+# セキュリティヘッダー設定
+
+# すべてのページに基本的なセキュリティヘッダーを適用
+/*
+  # XSS保護 - ブラウザのXSSフィルターを有効化
+  X-XSS-Protection: 1; mode=block
+  
+  # クリックジャッキング対策 - iframe内での表示を防止
+  X-Frame-Options: DENY
+  
+  # MIME-type sniffingを無効化
+  X-Content-Type-Options: nosniff
+  
+  # Referrer情報の制御
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Content Security Policy - コンテンツソースを制限
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' cdn.credly.com static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' cdn.credly.com www.credly.com static.cloudflareinsights.com; frame-src www.credly.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+# HTMLファイルのキャッシュ設定 - 常に最新版を取得
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog", </docs/api>; rel="service-doc", </openapi.json>; rel="service-desc", </.well-known/oauth-protected-resource>; rel="describedby"
+
+/index.html
+  Link: </.well-known/api-catalog>; rel="api-catalog", </docs/api>; rel="service-doc", </openapi.json>; rel="service-desc", </.well-known/oauth-protected-resource>; rel="describedby"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+
+/.well-known/openid-configuration
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/mcp/server-card.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+
+/.well-known/agent-skills/site-discovery/SKILL.md
+  Content-Type: text/markdown; charset=utf-8
+
+/docs/api
+  Content-Type: text/html; charset=utf-8
+
+/openapi.json
+  Content-Type: application/json; charset=utf-8
+
+/healthz
+  Content-Type: application/json; charset=utf-8
+
+# CSSファイルのキャッシュ設定 - 1日間キャッシュ
+/*.css
+  Cache-Control: public, max-age=86400
+
+# JavaScriptファイルのキャッシュ設定 - 1日間キャッシュ
+/*.js
+  Cache-Control: public, max-age=86400
+
+# 静的アセット用のキャッシュ設定
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
