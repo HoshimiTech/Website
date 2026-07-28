@@ -87,7 +87,7 @@ async function writeSearchEngineFiles() {
 	);
 
 	// sitemap.xmlを生成
-	const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map((page) => `<url><loc>${siteBaseUrl}${page.path}</loc><changefreq>${page.changefreq}</changefreq><priority>${page.priority}</priority></url>`).join('')}
+	const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map((page) => (page.priority != 0 ? `<url><loc>${siteBaseUrl}${page.path}</loc><lastmod>${new Date().toISOString()}</lastmod><priority>${page.priority}</priority></url>` : '')).join('')}
 </urlset>`;
 	fs.writeFileSync(
 		path.join(buildDirectory, 'sitemap.xml'),

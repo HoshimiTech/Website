@@ -1,123 +1,140 @@
 {
-  "pages": [
-    {
-      "name": "robots.txt",
-      "path": "/robots.txt",
-      "title": "",
-      "description": "",
-      "robots": ""
-    },
-    {
-      "name": "sitemap.xml",
-      "path": "/sitemap.xml",
-      "title": "",
-      "description": "",
-      "robots": ""
-    },
-    {
-      "name": "index",
-      "path": "/",
-      "title": "ホーム｜HoshimiTech",
-      "description": "Discord BOT開発や教育版Minecraft関連情報を発信するHoshimiTech公式サイトです。",
-      "robots": ""
-    },
-    {
-      "name": "services",
-      "path": "/services",
-      "title": "サービス｜HoshimiTech",
-      "description": "HoshimiTechが提供する各種サービスの一覧ページです。",
-      "robots": ""
-    },
-    {
-      "name": "services/jinbe",
-      "path": "/services/jinbe",
-      "title": "JINBE | HoshimiTech",
-      "description": "JINBEは、HoshimiTechが提供するDiscord BOTです。おみくじやじゃんけんなどの楽しい機能を備えています。",
-      "robots": ""
-    },
-    {
-      "name": "services/HoshimiTech-BOT",
-      "path": "/services/HoshimiTech-BOT",
-      "title": "HoshimiTech-BOT | HoshimiTech",
-      "description": "HoshimiTech-BOTは、HoshimiTechが提供するDiscord BOTです。教育機関向けの機能を備えています。",
-      "robots": ""
-    },
-    {
-      "name": "services/HoshimiTech-Music",
-      "path": "/services/HoshimiTech-Music",
-      "title": "HoshimiTech-Music | HoshimiTech",
-      "description": "HoshimiTech-Musicは、HoshimiTechが提供する音楽再生機能を備えたDiscord BOTです。",
-      "robots": ""
-    },
-    {
-      "name": "services/mcedu-portal",
-      "path": "/services/mcedu-portal",
-      "title": "教育版Minecraft非公式ポータル | HoshimiTech",
-      "description": "教育版Minecraft非公式ポータルは、教育版Minecraftに関する情報をまとめたサイトです。",
-      "robots": ""
-    },
-    {
-      "name": "plan",
-      "path": "/plan",
-      "title": "プラン｜HoshimiTech",
-      "description": "HoshimiTechのサブスクリプションプランの詳細と価格を掲載しています。",
-      "robots": ""
-    },
-    {
-      "name": "faq",
-      "path": "/faq",
-      "title": "よくある質問｜HoshimiTech",
-      "description": "HoshimiTechに関するよくある質問とその回答を掲載しています。",
-      "robots": ""
-    },
-    {
-      "name": "about-project",
-      "path": "/about-project",
-      "title": "このプロジェクトについて｜HoshimiTech",
-      "description": "HoshimiTechは、Discord BOT開発や教育版Minecraft関連情報を発信する公式サイトです。",
-      "robots": ""
-    },
-    {
-      "name": "docs/commerce",
-      "path": "/docs/commerce",
-      "title": "特定商取引法に関する表記｜HoshimiTech",
-      "description": "HoshimiTechの特定商取引法に関する表記を掲載しています。",
-      "robots": ""
-    },
-    {
-      "name": "docs/privacy-policy",
-      "path": "/docs/privacy-policy",
-      "title": "プライバシーポリシー｜HoshimiTech",
-      "description": "HoshimiTechのプライバシーポリシーを掲載しています。",
-      "robots": ""
-    },
-    {
-      "name": "docs/terms",
-      "path": "/docs/terms",
-      "title": "利用規約｜HoshimiTech",
-      "description": "HoshimiTechの利用規約を掲載しています。",
-      "robots": ""
-    },
-    {
-      "name": "error/404 notFound",
-      "path": "/404",
-      "title": "404 NOT FOUND｜HoshimiTech",
-      "description": "お探しのページは見つかりませんでした。URLが正しいかご確認ください。",
-      "robots": "noindex,nofollow"
-    },
-    {
-      "name": "error/500 serverError",
-      "path": "/500",
-      "title": "500 INTERNAL SERVER ERROR｜HoshimiTech",
-      "description": "サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。",
-      "robots": "noindex,nofollow"
-    },
-    {
-      "name": "error/400 badRequest",
-      "path": "/400",
-      "title": "400 BAD REQUEST｜HoshimiTech",
-      "description": "リクエストが不正です。URLが正しいかご確認ください。",
-      "robots": "noindex,nofollow"
-    }
-  ]
+	"pages": [
+		{
+			"name": "robots.txt",
+			"path": "/robots.txt",
+			"title": "",
+			"description": "",
+			"robots": "",
+			"priority": 0.25
+		},
+		{
+			"name": "sitemap.xml",
+			"path": "/sitemap.xml",
+			"title": "",
+			"description": "",
+			"robots": "",
+			"priority": 0.25
+		},
+		{
+			"name": "index",
+			"path": "/",
+			"title": "ホーム｜HoshimiTech",
+			"description": "Discord BOT開発や教育版Minecraft関連情報を発信するHoshimiTech公式サイトです。",
+			"robots": "",
+			"priority": 1
+		},
+		{
+			"name": "services",
+			"path": "/services",
+			"title": "サービス｜HoshimiTech",
+			"description": "HoshimiTechが提供する各種サービスの一覧ページです。",
+			"robots": "",
+			"priority": 1
+		},
+		{
+			"name": "services/jinbe",
+			"path": "/services/jinbe",
+			"title": "JINBE | HoshimiTech",
+			"description": "JINBEは、HoshimiTechが提供するDiscord BOTです。おみくじやじゃんけんなどの楽しい機能を備えています。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "services/HoshimiTech-BOT",
+			"path": "/services/HoshimiTech-BOT",
+			"title": "HoshimiTech-BOT | HoshimiTech",
+			"description": "HoshimiTech-BOTは、HoshimiTechが提供するDiscord BOTです。教育機関向けの機能を備えています。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "services/HoshimiTech-Music",
+			"path": "/services/HoshimiTech-Music",
+			"title": "HoshimiTech-Music | HoshimiTech",
+			"description": "HoshimiTech-Musicは、HoshimiTechが提供する音楽再生機能を備えたDiscord BOTです。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "services/mcedu-portal",
+			"path": "/services/mcedu-portal",
+			"title": "教育版Minecraft非公式ポータル | HoshimiTech",
+			"description": "教育版Minecraft非公式ポータルは、教育版Minecraftに関する情報をまとめたサイトです。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "plan",
+			"path": "/plan",
+			"title": "プラン｜HoshimiTech",
+			"description": "HoshimiTechのサブスクリプションプランの詳細と価格を掲載しています。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "faq",
+			"path": "/faq",
+			"title": "よくある質問｜HoshimiTech",
+			"description": "HoshimiTechに関するよくある質問とその回答を掲載しています。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "about-project",
+			"path": "/about-project",
+			"title": "このプロジェクトについて｜HoshimiTech",
+			"description": "HoshimiTechは、Discord BOT開発や教育版Minecraft関連情報を発信する公式サイトです。",
+			"robots": "",
+			"priority": 0.5
+		},
+		{
+			"name": "docs/commerce",
+			"path": "/docs/commerce",
+			"title": "特定商取引法に関する表記｜HoshimiTech",
+			"description": "HoshimiTechの特定商取引法に関する表記を掲載しています。",
+			"robots": "",
+			"priority": 0.3
+		},
+		{
+			"name": "docs/privacy-policy",
+			"path": "/docs/privacy-policy",
+			"title": "プライバシーポリシー｜HoshimiTech",
+			"description": "HoshimiTechのプライバシーポリシーを掲載しています。",
+			"robots": "",
+			"priority": 0.3
+		},
+		{
+			"name": "docs/terms",
+			"path": "/docs/terms",
+			"title": "利用規約｜HoshimiTech",
+			"description": "HoshimiTechの利用規約を掲載しています。",
+			"robots": "",
+			"priority": 0.3
+		},
+		{
+			"name": "error/404 notFound",
+			"path": "/404",
+			"title": "404 NOT FOUND｜HoshimiTech",
+			"description": "お探しのページは見つかりませんでした。URLが正しいかご確認ください。",
+			"robots": "noindex,nofollow",
+			"priority": 0
+		},
+		{
+			"name": "error/500 serverError",
+			"path": "/500",
+			"title": "500 INTERNAL SERVER ERROR｜HoshimiTech",
+			"description": "サーバー内部でエラーが発生しました。しばらくしてから再度アクセスしてください。",
+			"robots": "noindex,nofollow",
+			"priority": 0
+		},
+		{
+			"name": "error/400 badRequest",
+			"path": "/400",
+			"title": "400 BAD REQUEST｜HoshimiTech",
+			"description": "リクエストが不正です。URLが正しいかご確認ください。",
+			"robots": "noindex,nofollow",
+			"priority": 0
+		}
+	]
 }
