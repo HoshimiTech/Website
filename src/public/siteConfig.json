@@ -6,7 +6,7 @@
 			"title": "",
 			"description": "",
 			"robots": "",
-			"priority": 0.25
+			"priority": 0
 		},
 		{
 			"name": "sitemap.xml",
@@ -14,7 +14,7 @@
 			"title": "",
 			"description": "",
 			"robots": "",
-			"priority": 0.25
+			"priority": 0
 		},
 		{
 			"name": "index",
