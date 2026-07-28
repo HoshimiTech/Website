@@ -1,6 +1,6 @@
 {
-	"landingPageDomain": "HoshimiTech.hoshimikan6490.com",
-	"dashboardDomain": "dashboard.HoshimiTech.hoshimikan6490.com",
+	"landingPageDomain": "hoshimitech.hoshimikan6490.com",
+	"dashboardDomain": "dashboard.hoshimitech.hoshimikan6490.com",
 	"botInviteURLs": {
 		"HoshimiTech-BOT": "https://discord.com/oauth2/authorize?client_id=949289830481821776&permissions=279444581776&integration_type=0&scope=bot+applications.commands",
 		"JINBE": "https://discord.com/oauth2/authorize?client_id=988951430075396167&permissions=274878024896&integration_type=0&scope=bot+applications.commands"
