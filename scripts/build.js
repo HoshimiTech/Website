@@ -38,10 +38,15 @@ async function renderViews(directory) {
 		if (entry.isDirectory()) {
 			await renderViews(inputPath);
 		} else if (entry.isFile() && entry.name.endsWith('.ejs')) {
-			const relativePath = path.relative(viewsDirectory, inputPath);
+			const relativePath = path
+				.relative(viewsDirectory, inputPath)
+				.replace(/error/, '')
+				.replace(/\.ejs$/, '.html');
 			const outputPath = path.join(
 				buildDirectory,
-				relativePath.replace(/\.ejs$/, '.html'),
+				relativePath.includes(' ')
+					? `${relativePath.split(' ')[0]}.html`
+					: relativePath,
 			);
 			await renderEjsFile(inputPath, outputPath);
 		}
