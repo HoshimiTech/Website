@@ -22,8 +22,13 @@ async function build() {
 
 	// public 配下の内容を build 配下へコピーする。
 	fs.cpSync('src/public', buildDirectory, { recursive: true });
-	fs.rmSync(path.join(buildDirectory, '画像の出典.md'), { force: true });
-	fs.rmSync(path.join(buildDirectory, 'agent-tools.js'), { force: true });
+	const removeFiles = ['画像の出典.md', 'agent-tools.js'];
+	for (const file of removeFiles) {
+		const filePath = path.join(buildDirectory, file);
+		if (fs.existsSync(filePath)) {
+			fs.unlinkSync(filePath);
+		}
+	}
 
 	await writeSearchEngineFiles();
 
