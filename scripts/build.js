@@ -73,7 +73,7 @@ async function renderEjsFile(inputPath, outputPath) {
 		siteBaseUrl,
 		siteOgImage: `${siteBaseUrl}/images/logo.png`,
 		...pageSettings,
-		siteURL: siteBaseUrl + (pageSettings.siteURL || ''),
+		siteURL: siteBaseUrl + (pageSettings.path || ''),
 		projectConfig,
 	};
 
