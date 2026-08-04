@@ -3,23 +3,38 @@
 # ==========================================
 
 /*
-  # HTTPS を強制（HTTPS運用が前提）
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-
-  # MIME Sniffing 防止
-  X-Content-Type-Options: nosniff
-
-  # Clickjacking 対策
+  # XSS保護 - ブラウザのXSSフィルターを有効化
+  X-XSS-Protection: 1; mode=block
+  
+  # クリックジャッキング対策 - iframe内での表示を防止
   X-Frame-Options: DENY
-
-  # Referer の制御
+  
+  # MIME-type sniffingを無効化
+  X-Content-Type-Options: nosniff
+  
+  # Referrer情報の制御
   Referrer-Policy: strict-origin-when-cross-origin
 
   # 権限の制限
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=()
 
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; script-src 'self' https://static.clourxxdflareinsights.com https://cdn.credly.com; style-src 'self' 'unsafe-inline' https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://static.cloudflareinsights.com https://cloudflareinsights.com https://cdn.credly.com https://www.credly.com; frame-src https://www.credly.com; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy:
+    default-src 'self';
+    base-uri 'self';
+    frame-ancestors 'none';
+    form-action 'self';
+    object-src 'none';
+    script-src 'self' https://static.cloudflareinsights.com https://cdn.credly.com;
+    style-src 'self' 'unsafe-inline' https://fonts.gstatic.com;
+    img-src 'self' data:;
+    font-src 'self' data: https://fonts.gstatic.com;
+    connect-src 'self';
+    frame-src https://www.credly.com;
+    worker-src 'none';
+    manifest-src 'none';
+    media-src 'none';
+    upgrade-insecure-requests;
 
 # ==========================================
 # Cache
@@ -28,19 +43,16 @@
 /*.html
   Cache-Control: no-cache, must-revalidate
 
-/
-  Cache-Control: no-cache, must-revalidate
-
+# CSSファイルのキャッシュ設定 - 1日間キャッシュ
 /*.css
   Cache-Control: public, max-age=86400
 
+# JavaScriptファイルのキャッシュ設定 - 1日間キャッシュ
 /*.js
   Cache-Control: public, max-age=86400
 
+# 静的アセット用のキャッシュ設定
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
 # ==========================================
