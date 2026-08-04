@@ -19,7 +19,7 @@
   Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), encrypted-media=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), publickey-credentials-get=(), usb=(), xr-spatial-tracking=()
 
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; script-src 'self' https://static.clourxxdflareinsights.com https://cdn.credly.com; style-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://static.cloudflareinsights.com https://cloudflareinsights.com https://cdn.credly.com https://www.credly.com; frame-src https://www.credly.com; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; script-src 'self' https://static.clourxxdflareinsights.com https://cdn.credly.com; style-src 'self' 'unsafe-inline' https://fonts.gstatic.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://static.cloudflareinsights.com https://cloudflareinsights.com https://cdn.credly.com https://www.credly.com; frame-src https://www.credly.com; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests
 
 # ==========================================
 # Cache
