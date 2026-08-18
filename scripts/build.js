@@ -71,7 +71,7 @@ async function renderEjsFile(inputPath, outputPath) {
 
 	const pageConfig = {
 		siteBaseUrl,
-		siteOgImage: `${siteBaseUrl}/images/logo.png`,
+		siteOgImage: `${siteBaseUrl}/images/logo.webp`,
 		...pageSettings,
 		siteURL: siteBaseUrl + (pageSettings.path || ''),
 		projectConfig,
